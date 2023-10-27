@@ -28,8 +28,25 @@ def displayMatrix(matrix):
     for row in matrix:
      print(row)
 
-
-
+def dictionaryInput():
+    dictionary = {}
+    while True:
+        key = input("Enter a key or enter 'q' to quit ")
+        if key == "q":
+            break
+        else:
+            value = input("Enter a value :")
+        dictionary[key] = value
+    inverted_dictionary = {}
+    for key,value in dictionary.items():
+        if value not in inverted_dictionary:
+            inverted_dictionary[value] = key
+        else:
+           inverted_dictionary[value].append(key)
+    print("original dictionary :")
+    print(dictionary)
+    print("Inverted dictionary :")
+    print(inverted_dictionary)
 
 
 
@@ -90,6 +107,8 @@ elif choice == "2":
         print("Matrix 1 is a rotation of Matrix 2 (or vice versa).")
     else:
         print("Matrix 1 is not a rotation of Matrix 2.")
+elif choice == "3":
+    dictionaryInput()
 
 
 
