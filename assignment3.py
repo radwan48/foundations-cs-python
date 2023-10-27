@@ -56,6 +56,41 @@ if choice == "1":
    displayMenu()
    choice = input("Enter your choice :")
 elif choice == "2":
+    def is_rotation_matrix(matrix1, matrix2):
+        # Check if the dimensions of the matrices are compatible for rotation
+        if len(matrix1) != len(matrix2) or len(matrix1[0]) != len(matrix2[0]):
+            return False
+
+        # Check if the columns of matrix1 are rows in matrix2 and vice versa
+        for i in range(len(matrix1)):
+            for j in range(len(matrix1[0])):
+                if matrix1[i][j] != matrix2[j][i]:
+                    return False
+
+        return True
+
+
+    def input_matrix():
+        rows = int(input("Enter the number of rows: "))
+        columns = int(input("Enter the number of columns: "))
+        matrix = []
+        for i in range(rows):
+            row = []
+            for j in range(columns):
+                value = int(input(f"Enter the value at position ({i + 1},{j + 1}): "))
+                row.append(value)
+            matrix.append(row)
+        return matrix
+
+
+    matrix1 = input_matrix()
+    matrix2 = input_matrix()
+
+    if is_rotation_matrix(matrix1, matrix2):
+        print("Matrix 1 is a rotation of Matrix 2 (or vice versa).")
+    else:
+        print("Matrix 1 is not a rotation of Matrix 2.")
+
 
 
 
