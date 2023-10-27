@@ -62,6 +62,32 @@ def dictionaryInput():
     print(inverted_dictionary)
 
 
+def is_rotation_matrix(matrix1, matrix2):
+    # Check if the dimensions of the matrices are compatible for rotation
+    if len(matrix1) != len(matrix2) or len(matrix1[0]) != len(matrix2[0]):
+        return False
+
+    # Check if the columns of matrix1 are rows in matrix2
+    for i in range(len(matrix1)):
+        for j in range(len(matrix1[0])):
+            if matrix1[i][j] != matrix2[j][i]:
+                return False
+
+    return True
+
+
+def input_matrix():
+    rows = int(input("Enter the number of rows: "))
+    columns = int(input("Enter the number of columns: "))
+    matrix = []
+    for i in range(rows):
+        row = []
+        for j in range(columns):
+            value = int(input(f"Enter the value at position ({i + 1},{j + 1}): "))
+            row.append(value)
+        matrix.append(row)
+    return matrix
+
 
 def displayMenu():
     print("1.Add matrices\n"
@@ -71,61 +97,49 @@ def displayMenu():
           + "5.Check Palindrome\n"
           + "6. Search for an Element & Merge Sort\n"
           + "7.Exit")
-displayMenu()
-choice = input("Enter your choice :")
-if choice == "1":
-   rows = int(input("Enter number of rows :"))
-   col = int(input("Enter number of col :"))
-   print("Enter elements of the first matrix")
-   matrix1 = get_matrix(rows, col)
-   print("Enter elements of the second matrix")
-   matrix2 = get_matrix(rows, col)
-   print("The sum of two matrices")
-   result_matrix = addMatrices(matrix1, matrix2)
-   print(result_matrix)
-   displayMenu()
-   choice = input("Enter your choice :")
-elif choice == "2":
-    def is_rotation_matrix(matrix1, matrix2):
-        # Check if the dimensions of the matrices are compatible for rotation
-        if len(matrix1) != len(matrix2) or len(matrix1[0]) != len(matrix2[0]):
-            return False
 
-        # Check if the columns of matrix1 are rows in matrix2
-        for i in range(len(matrix1)):
-            for j in range(len(matrix1[0])):
-                if matrix1[i][j] != matrix2[j][i]:
-                    return False
+def main():
+  displayMenu()
+  choice = input("Enter your choice :")
 
-        return True
+  if choice == "1":
+       rows = int(input("Enter number of rows :"))
+       col = int(input("Enter number of col :"))
+       print("Enter elements of the first matrix")
+       matrix1 = get_matrix(rows, col)
+       print("Enter elements of the second matrix")
+       matrix2 = get_matrix(rows, col)
+       print("The sum of two matrices")
+       result_matrix = addMatrices(matrix1, matrix2)
+       print(result_matrix)
+       main()
+  elif choice == "2":
+        matrix1 = input_matrix()
+        matrix2 = input_matrix()
+        if is_rotation_matrix(matrix1, matrix2):
+            print("Matrix 1 is a rotation of Matrix 2 (or vice versa).")
+        else:
+            print("Matrix 1 is not a rotation of Matrix 2.")
 
-
-    def input_matrix():
-        rows = int(input("Enter the number of rows: "))
-        columns = int(input("Enter the number of columns: "))
-        matrix = []
-        for i in range(rows):
-            row = []
-            for j in range(columns):
-                value = int(input(f"Enter the value at position ({i + 1},{j + 1}): "))
-                row.append(value)
-            matrix.append(row)
-        return matrix
+        main()
+  elif choice == "3":
+        dictionaryInput()
+        main()
+  elif choice == "4":
+        rows = int(input("Enter rows :"))
+        col = int(input("Enter col :"))
+        convertMatrix_Dictionary(rows, col)
+        main()
+  elif choice == "7":
+      exit()
+  else:
+      print("invalid input please try again.")
+      main()
 
 
-    matrix1 = input_matrix()
-    matrix2 = input_matrix()
+if __name__ == '__main__':
+    main()
 
-    if is_rotation_matrix(matrix1, matrix2):
-        print("Matrix 1 is a rotation of Matrix 2 (or vice versa).")
-    else:
-        print("Matrix 1 is not a rotation of Matrix 2.")
-elif choice == "3":
-    dictionaryInput()
-elif choice == "4":
-    rows = int(input("Enter rows :"))
-    col = int(input("Enter col :"))
-    convertMatrix_Dictionary(rows,col)
 
 
 
