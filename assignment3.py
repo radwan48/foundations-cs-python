@@ -31,7 +31,7 @@ def displayMatrix(matrix):
 def dictionaryInput():
     dictionary = {}
     while True:
-        key = input("Enter a key or enter 'q' to quit ")
+        key = input("Enter a key or enter 'q' to quit :")
         if key == "q":
             break
         else:
