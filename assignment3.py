@@ -20,6 +20,19 @@ def addMatrices(matrix1, matrix2):
     return result
 
 
+def convertMatrix_Dictionary(rows,col):
+    matrix = []
+    print(f"Enter the elements for {rows}x{col}")
+    for i in range(rows):
+        row = []
+        for j in range(col):
+           elements = input(f"Enter elements :")
+           row.append(elements)
+        matrix.append(row)
+        print(matrix)
+
+
+
 
 
 
@@ -38,7 +51,7 @@ def dictionaryInput():
             value = input("Enter a value :")
         dictionary[key] = value
     inverted_dictionary = {}
-    for key,value in dictionary.items():
+    for key, value in dictionary.items():
         if value not in inverted_dictionary:
             inverted_dictionary[value] = key
         else:
@@ -78,7 +91,7 @@ elif choice == "2":
         if len(matrix1) != len(matrix2) or len(matrix1[0]) != len(matrix2[0]):
             return False
 
-        # Check if the columns of matrix1 are rows in matrix2 and vice versa
+        # Check if the columns of matrix1 are rows in matrix2
         for i in range(len(matrix1)):
             for j in range(len(matrix1[0])):
                 if matrix1[i][j] != matrix2[j][i]:
@@ -109,8 +122,10 @@ elif choice == "2":
         print("Matrix 1 is not a rotation of Matrix 2.")
 elif choice == "3":
     dictionaryInput()
-
-
+elif choice == "4":
+    rows = int(input("Enter rows :"))
+    col = int(input("Enter col :"))
+    convertMatrix_Dictionary(rows,col)
 
 
 
