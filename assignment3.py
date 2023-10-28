@@ -97,6 +97,21 @@ def palindrome(s):
     else:
         return False
 
+def sequenttialSearch(S,list):
+    for i in range(len(list)):
+        if list[i] == S:
+            print(f"{S} is found at index {i}")
+        return -1
+def insertionSort(list):
+    for x in range(len(list) - 1):
+        for y in range(x + 1, len(list)):
+            if list[x] > list[y]:
+                temp = list[x]
+                list[x] = list[y]
+                list[y] = temp
+    return list
+
+
 
 def displayMenu():
     print("1. Add matrices\n"
@@ -147,6 +162,8 @@ def main():
           print(f"{word} is not palindrome")
 
       main()
+  elif choice == "6":
+   pass
   elif choice == "7":
       exit()
   else:
@@ -168,8 +185,8 @@ def insertionSort(list):
                 temp = list[x]
                 list[x] = list[y]
                 list[y] = temp
-
     return list
+
 
 
 
