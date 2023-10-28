@@ -90,13 +90,13 @@ def input_matrix():
 
 
 def displayMenu():
-    print("1.Add matrices\n"
-          + "2.Check Rotation\n"
-          + "3.Invert Dictionary\n"
-          + "4.Convert Matrix to Dictionary\n"
-          + "5.Check Palindrome\n"
+    print("1. Add matrices\n"
+          + "2. Check Rotation\n"
+          + "3. Invert Dictionary\n"
+          + "4. Convert Matrix to Dictionary\n"
+          + "5. Check Palindrome\n"
           + "6. Search for an Element & Merge Sort\n"
-          + "7.Exit")
+          + "7. Exit")
 
 def main():
   displayMenu()
@@ -117,7 +117,7 @@ def main():
         matrix1 = input_matrix()
         matrix2 = input_matrix()
         if is_rotation_matrix(matrix1, matrix2):
-            print("Matrix 1 is a rotation of Matrix 2 (or vice versa).")
+            print("Matrix 1 is a rotation of Matrix 2 .")
         else:
             print("Matrix 1 is not a rotation of Matrix 2.")
 
@@ -134,11 +134,12 @@ def main():
       exit()
   else:
       print("invalid input please try again.")
-      main()
 
 
-if __name__ == '__main__':
-    main()
+
+
+def palindrome(s):
+
 
 
 
