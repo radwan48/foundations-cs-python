@@ -163,7 +163,12 @@ def main():
 
       main()
   elif choice == "6":
-   pass
+   list = [2, 4, 5, 7, 1, 23, 4, 9]
+   print(f"List : {list}")
+   S = input("Enter an element to find :")
+   sequenttialSearch(S, list)
+
+
   elif choice == "7":
       exit()
   else:
@@ -193,7 +198,8 @@ def insertionSort(list):
 
 
 
-
+if __name__ == '__main__':
+    main()
 
 
 
