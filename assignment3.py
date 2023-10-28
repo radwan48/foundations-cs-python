@@ -88,6 +88,15 @@ def input_matrix():
         matrix.append(row)
     return matrix
 
+def palindrome(s):
+    # Base case
+    if len(s) <= 1:
+        return True
+    if s[0] == s[-1]:
+        return palindrome(s[1:-1])
+    else:
+        return False
+
 
 def displayMenu():
     print("1. Add matrices\n"
@@ -130,21 +139,28 @@ def main():
         col = int(input("Enter col :"))
         convertMatrix_Dictionary(rows, col)
         main()
+  elif choice == "5":
+      word = input("Enter a word :")
+      if palindrome(word):
+          print(f"{word} is palindrome")
+      else:
+          print(f"{word} is not palindrome")
+
+      main()
   elif choice == "7":
       exit()
   else:
       print("invalid input please try again.")
+      main()
 
 
 
 
-def palindrome(s):
-    # Base case
-    if len(s) <= 1:
-        return True
-    if s[0] == s[-1]:
-        return palindrome(s[1:-1])
-    else:
+def sequenttialSearch(S,llist):
+    for i in range(len(list)):
+        if list[i] == S:
+            print(f"{S} is found at index {i}")
+        return -1
 
 
 
