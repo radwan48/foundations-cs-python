@@ -141,9 +141,9 @@ def main():  #### Overall Time Complexity is O(n^2)
         matrix1 = input_matrix()
         matrix2 = input_matrix()
         if is_rotation_matrix(matrix1, matrix2):
-            print("Matrix 1 is a rotation of Matrix 2 .")
+            print("The two matrices are rotations of each other.")
         else:
-            print("Matrix 1 is not a rotation of Matrix 2.")
+            print("The two matrices are not rotations of each other.")
 
         main()
   elif choice == "3":
