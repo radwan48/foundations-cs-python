@@ -97,20 +97,20 @@ def palindrome(s):
     else:
         return False
 
-def sequenttialSearch(s, listt):
-    for i in range(len(listt)):
-        if listt[i] == s:
+def sequenttialSearch(s, list):
+    for i in range(len(list)):
+        if list[i] == s:
           print(f"{s} is found at index {i}")
           return i
     return -1
-def insertionSort(listt):
-    for x in range(len(listt) - 1):
-        for y in range(x + 1, len(listt)):
-            if listt[x] > listt[y]:
-                temp = listt[x]
-                listt[x] = listt[y]
-                listt[y] = temp
-    return listt
+def insertionSort(list):
+    for x in range(len(list) - 1):
+        for y in range(x + 1, len(list)):
+            if list[x] > list[y]:
+                temp = list[x]
+                list[x] = list[y]
+                list[y] = temp
+    print(list)
 
 
 
@@ -168,6 +168,7 @@ def main():
    print(f"List : {list}")
    s = int(input("Enter an element to find :"))
    sequenttialSearch(s, list)
+   insertionSort(list)
 
   elif choice == "7":
       exit()
