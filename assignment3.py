@@ -1,4 +1,4 @@
-def get_matrix(rows, col):
+def get_matrix(rows, col): # worst case here is O(n^2)
     matrix = []
     print(f"Enter elements for ({rows}x{col}) : ")
     for i in range(rows):
@@ -9,7 +9,7 @@ def get_matrix(rows, col):
             row.append(int(elements[j]))
         matrix.append(row)
     return matrix
-def addMatrices(matrix1, matrix2):
+def addMatrices(matrix1, matrix2): # worst case here is O(n^2)
     result = []
     for i in range(len(matrix1)):
         row = []
@@ -20,7 +20,7 @@ def addMatrices(matrix1, matrix2):
     return result
 
 
-def convertMatrix_Dictionary(rows,col):
+def convertMatrix_Dictionary(rows,col): # worst case here is O(n^2)
     matrix = []
     print(f"Enter the elements for {rows}x{col}")
     for i in range(rows):
@@ -37,7 +37,7 @@ def convertMatrix_Dictionary(rows,col):
 
 
 
-def displayMatrix(matrix):
+def displayMatrix(matrix): # O(n)
     for row in matrix:
      print(row)
 
@@ -45,7 +45,7 @@ def dictionaryInput():
     dictionary = {}
     while True:
         key = input("Enter a key or enter 'q' to quit :")
-        if key == "q":
+        if key == "q": # this will stop taking keys and quit the loops
             break
         else:
             value = input("Enter a value :")
