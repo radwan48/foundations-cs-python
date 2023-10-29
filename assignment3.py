@@ -1,12 +1,12 @@
-def get_matrix(rows, col): # worst case here is O(n^2)
-    matrix = []
+def get_matrix(rows, col):  # worst case here is O(n^2)
+    matrix = []  ## initialize a matrix
     print(f"Enter elements for ({rows}x{col}) : ")
     for i in range(rows):
         row = []
-        print(f"Enter elements of row {i + 1}")
+        print(f"Enter elements of row {i + 1}")  ## (i+1) is because (i) will start at 0, I want it to start at 1
         elements = input().split()
         for j in range(col):
-            row.append(int(elements[j]))
+            row.append(int(elements[j]))  ## using int(elements) to confirm that I will add int number in rows
         matrix.append(row)
     return matrix
 def addMatrices(matrix1, matrix2): # worst case here is O(n^2)
@@ -20,15 +20,15 @@ def addMatrices(matrix1, matrix2): # worst case here is O(n^2)
     return result
 
 
-def convertMatrix_Dictionary(rows,col): # worst case here is O(n^2)
+def convertMatrix_Dictionary(rows, col):  # worst case here is O(n^2)
     matrix = []
     print(f"Enter the elements for {rows}x{col}")
-    for i in range(rows):
+    for i in range(rows):  ## rows stand for how many rows user wants
         row = []
         for j in range(col):
-           elements = input(f"Enter elements :")
+           elements = input(f"Enter elements :")  ## Elements inside rows
            row.append(elements)
-        matrix.append(row)
+        matrix.append(row)  ## adding rows in matrix
         print(matrix)
 
 
@@ -37,25 +37,25 @@ def convertMatrix_Dictionary(rows,col): # worst case here is O(n^2)
 
 
 
-def displayMatrix(matrix): #  time complexity for this function is O(n)
+def displayMatrix(matrix):  ##  time complexity for this function is O(n)
     for row in matrix:
      print(row)
 
-def dictionaryInput(): ###  overall time complexity for this function is O(n)
+def dictionaryInput():  ###  overall time complexity for this function is O(n)
     dictionary = {}
     while True:
         key = input("Enter a key or enter 'q' to quit :")
-        if key == "q": # this will stop taking keys and quit the loops
+        if key == "q":  # this will stop taking keys and quit the loops
             break
         else:
             value = input("Enter a value :")
         dictionary[key] = value
     inverted_dictionary = {}
-    for key, value in dictionary.items():
-        if value not in inverted_dictionary:  # this will take a unique key one time
+    for key, value in dictionary.items():  # key input will be keys in dict and value input will be values
+        if value not in inverted_dictionary:
             inverted_dictionary[value] = key
         else:
-           inverted_dictionary[value].append(key)  # value will be keys and keys will be value
+           inverted_dictionary[value].append(key)
     print("original dictionary :")
     print(dictionary)
     print("Inverted dictionary :")
@@ -92,7 +92,7 @@ def palindrome(s):
     if len(s) <= 1:
         return True
     if s[0] == s[-1]:  ## if first index and last index is equal
-        return palindrome(s[1:-1]) ## call the function again and slice the string
+        return palindrome(s[1:-1])  ## call the function again and slice the string
     else:
         return False
 
@@ -126,15 +126,15 @@ def main():  #### Overall Time Complexity is O(n^2)
   displayMenu()
   choice = input("Enter your choice :")
 
-  if choice == "1":
+  if choice == "1":  ## if user enter 1
        rows = int(input("Enter number of rows :"))
        col = int(input("Enter number of col :"))
        print("Enter elements of the first matrix")
-       matrix1 = get_matrix(rows, col)
+       matrix1 = get_matrix(rows, col)  ## calling function for matrix 1
        print("Enter elements of the second matrix")
-       matrix2 = get_matrix(rows, col)
+       matrix2 = get_matrix(rows, col)  ## calling function for matrix 2
        print("The sum of two matrices")
-       result_matrix = addMatrices(matrix1, matrix2)
+       result_matrix = addMatrices(matrix1, matrix2)  ## adding matrix1 and matrix 2
        print(result_matrix)
        main()
   elif choice == "2":
