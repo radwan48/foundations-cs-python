@@ -63,12 +63,12 @@ def dictionaryInput():
 
 
 def is_rotation_matrix(matrix1, matrix2):
-    # Check if the dimensions of the matrices are compatible for rotation
+                                               # Check if the dimensions of the matrices are compatible for rotation
     if len(matrix1) != len(matrix2) or len(matrix1[0]) != len(matrix2[0]):
         return False
 
-    # Check if the columns of matrix1 are rows in matrix2
-    for i in range(len(matrix1)):
+
+    for i in range(len(matrix1)):     # Check if the columns of matrix1 are rows in matrix2
         for j in range(len(matrix1[0])):
             if matrix1[i][j] != matrix2[j][i]:
                 return False
@@ -102,7 +102,7 @@ def sequenttialSearch(s, list):
         if list[i] == s:
           print(f"{s} is found at index {i}")
           return i
-    return -1
+    print(f"{s} is not found in the list")
 def insertionSort(list):
     for x in range(len(list) - 1):
         for y in range(x + 1, len(list)):
@@ -168,7 +168,9 @@ def main():
    print(f"List : {list}")
    s = int(input("Enter an element to find :"))
    sequenttialSearch(s, list)
+   print("list is sorted :")
    insertionSort(list)
+   main()
 
   elif choice == "7":
       exit()
