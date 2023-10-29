@@ -37,11 +37,11 @@ def convertMatrix_Dictionary(rows,col): # worst case here is O(n^2)
 
 
 
-def displayMatrix(matrix): # O(n)
+def displayMatrix(matrix): #  time complexity for this function is O(n)
     for row in matrix:
      print(row)
 
-def dictionaryInput():
+def dictionaryInput(): ###  overall time complexity for this function is O(n)
     dictionary = {}
     while True:
         key = input("Enter a key or enter 'q' to quit :")
@@ -62,20 +62,20 @@ def dictionaryInput():
     print(inverted_dictionary)
 
 
-def is_rotation_matrix(matrix1, matrix2):
+def is_rotation_matrix(matrix1, matrix2):  # Overall Time complexity for this function is O(n^2)
     # Check if the dimensions of the matrices are compatible for being rotations
-    if len(matrix1) != len(matrix2[0]) or len(matrix1[0]) != len(matrix2):
+    if len(matrix1) != len(matrix2[0]) or len(matrix1[0]) != len(matrix2):  # just checking so it is O(1)
         return False
-    for i in range(len(matrix1)):
-        for j in range(len(matrix1[0])):
-           if matrix1[i][j] != matrix2[j][i]:
+    for i in range(len(matrix1)):  # O(n)
+        for j in range(len(matrix1[0])):  # O(n)
+           if matrix1[i][j] != matrix2[j][i]:  # O(1)
 
                return False
     return True
 # If the function has not returned False at this point, it means that the matrices are rotation matrices, so it returns True.
 
 
-def input_matrix():
+def input_matrix():  ### Overall Time complexity is O(n^2)
     rows = int(input("Enter the number of rows: "))
     columns = int(input("Enter the number of columns: "))
     matrix = []
@@ -88,21 +88,21 @@ def input_matrix():
     return matrix
 
 def palindrome(s):
-    # Base case
+    # Base case When the  length of the string  becomes 0 or 1 it will stop and return True
     if len(s) <= 1:
         return True
-    if s[0] == s[-1]:
-        return palindrome(s[1:-1])
+    if s[0] == s[-1]:  ## if first index and last index is equal
+        return palindrome(s[1:-1]) ## call the function again and slice the string
     else:
         return False
 
-def sequenttialSearch(s, list):
+def sequentialSearch(s, list):  ## time complexity is O(n)
     for i in range(len(list)):
         if list[i] == s:
           print(f"{s} is found at index {i}")
           return i
     print(f"{s} is not found in the list")
-def insertionSort(list):
+def insertionSort(list):  ## Time complexity is O(n^2)
     for x in range(len(list) - 1):
         for y in range(x + 1, len(list)):
             if list[x] > list[y]:
@@ -122,7 +122,7 @@ def displayMenu():
           + "6. Search for an Element & Merge Sort\n"
           + "7. Exit")
 
-def main():
+def main():  #### Overall Time Complexity is O(n^2)
   displayMenu()
   choice = input("Enter your choice :")
 
@@ -166,7 +166,7 @@ def main():
    list = [2, 4, 5, 12, 7, 1, 3]
    print(f"List : {list}")
    s = int(input("Enter an element to find :"))
-   sequenttialSearch(s, list)
+   sequentialSearch(s, list)
    print("list is sorted :")
    insertionSort(list)
    main()
