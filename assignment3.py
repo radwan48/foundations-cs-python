@@ -52,10 +52,10 @@ def dictionaryInput():
         dictionary[key] = value
     inverted_dictionary = {}
     for key, value in dictionary.items():
-        if value not in inverted_dictionary: # this will take a unique key one time
+        if value not in inverted_dictionary:  # this will take a unique key one time
             inverted_dictionary[value] = key
         else:
-           inverted_dictionary[value].append(key) # value will be keys and keys will be value
+           inverted_dictionary[value].append(key)  # value will be keys and keys will be value
     print("original dictionary :")
     print(dictionary)
     print("Inverted dictionary :")
@@ -72,6 +72,7 @@ def is_rotation_matrix(matrix1, matrix2):
 
                return False
     return True
+# If the function has not returned False at this point, it means that the matrices are rotation matrices, so it returns True.
 
 
 def input_matrix():
