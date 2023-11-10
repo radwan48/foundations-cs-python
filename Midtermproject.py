@@ -11,12 +11,36 @@ def displayMenu():
         + "9. Exit")
 
 
+def openTab():
+
+    title = input("Enter a title :")
+    if title and title.isalnum():
+     url = input("Enter the url :")
+     if url.startswith(('http://', 'https://')):
+        list.append(url)
+        dict[title] = url
+     else:
+      print("Please type a valid url")
+      openTab()
+    else:
+        print("Please enter an a valid title for url")
+        openTab()
+
+
+
+
+dict = {}
+list = []
+
 def main():
     displayMenu()
     choice = input("Enter your choice :")
     while choice != "9":
         if choice == "1":
-            pass
+            openTab()
+            print(dict)
+            print(list)
+            main()
         elif choice == "2":
             pass
         elif choice == "3":
@@ -36,3 +60,7 @@ def main():
             main()
 
 
+
+
+if __name__ == '__main__':
+    main()
