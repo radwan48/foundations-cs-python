@@ -32,25 +32,35 @@ def openTab():
 
 
 def closeTab():
-    index = input("Enter the index for the tab to close :")
     if len(list_tabs) == 0:
         print("No tabs open to close. Please open a tab before attempting to close.")
-    elif index in list_tabs:
-     list_tabs.pop(int(index))
-     print(f"Closed tab at index {index}.")
+        return
+    index = input("Enter the index for the tab to close :")
+    if index.strip():  ## to check if the input has empty string
+        if index.isdigit():
+            index = int(index)
+            if 0 <= int(index) < len(list_tabs):
+              list_tabs.pop(index)
+              print(f"Closed tab at index {index}.")
+            else:
+                 print("Invalid index, please enter a valid index")
+        else:
+            print("Please enter a valid integer index")
     else:
-        list_tabs.pop()
+        list_tabs.pop(-1)
+        print("close last tab")
 
 def switchTab():
-    index = input("Enter the index for the tab to display its content :")
+    index_tab = input("Enter the index for the tab to display its content :")
     if len(list_tabs) == 0:
         print("No tabs open to display content. Please open a tab before attempting to display.")
-    elif index in list_tabs:
-      content = list[int(index)]
-      display_url = request.urlopen(content)
+    elif index_tab in list_tabs:
+        for index_tab in range(len(list_tabs)):
+          print(str(list_tabs[index_tab]))
+      # display_url = request.urlopen(content)
 
     else:
-        print(list[len(list)])
+        print(str((list_tabs[len(list_tabs)-1])))
 
 
 
@@ -70,6 +80,8 @@ def main():
             main()
         elif choice == "2":
             closeTab()
+            print(opened_tabs)
+            print(list_tabs)
             main()
         elif choice == "3":
             switchTab()
