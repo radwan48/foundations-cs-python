@@ -1,3 +1,7 @@
+import urllib.request
+
+from urllib import request
+
 
 def displayMenu():
     print("1. Open Tab\n"
@@ -18,7 +22,7 @@ def openTab():
      url = input("Enter the url :")
      if url.startswith(('http://', 'https://')):  # https://www.w3schools.com/python/ref_string_startswith.asp                                                        
         list_tabs.append(url)                           # For .startwith method
-        dict[title] = url
+        opened_tabs[title] = url
      else:
       print("Please type a valid url")
       openTab()
@@ -37,7 +41,22 @@ def closeTab():
     else:
         list_tabs.pop()
 
-dict = {}
+def switchTab():
+    index = input("Enter the index for the tab to display its content :")
+    if len(list_tabs) == 0:
+        print("No tabs open to display content. Please open a tab before attempting to display.")
+    elif index in list_tabs:
+      content = list[int(index)]
+      display_url = request.urlopen(content)
+
+    else:
+        print(list[len(list)])
+
+
+
+
+
+opened_tabs = {}
 list_tabs = []
 
 def main():
@@ -46,14 +65,15 @@ def main():
     while choice != "9":
         if choice == "1":
             openTab()
-            print(dict)
+            print(opened_tabs)
             print(list_tabs)
             main()
         elif choice == "2":
             closeTab()
             main()
         elif choice == "3":
-            pass
+            switchTab()
+            main()
         elif choice == "4":
             pass
         elif choice == "5":
