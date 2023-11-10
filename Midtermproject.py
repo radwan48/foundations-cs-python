@@ -27,7 +27,12 @@ def openTab():
         openTab()
 
 
-
+def closeTab():
+    index = input("Enter the index for the tab to close :")
+    if index in list:
+     list.pop(int(index))
+    else:
+        list.pop()
 
 dict = {}
 list = []
@@ -42,7 +47,7 @@ def main():
             print(list)
             main()
         elif choice == "2":
-            pass
+            closeTab()
         elif choice == "3":
             pass
         elif choice == "4":
