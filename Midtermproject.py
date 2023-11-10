@@ -1,6 +1,6 @@
 import urllib.request
+from urllib.error import URLError, HTTPError
 
-from urllib import request
 
 
 def displayMenu():
@@ -50,6 +50,21 @@ def closeTab():
         list_tabs.pop(-1)
         print("close last tab")
 
+
+def readUrl(weburl):
+    try:
+      data = weburl.read()
+      print(str(data))
+    except HTTPError as e:
+        print(f"HTTP Error: {e.code}")
+    except URLError as e:
+         print(f"URL Error: {e.reason}")
+    except Exception as e:
+       print(f"An unexpected error occurred: {e}")
+
+
+
+
 def switchTab(list_tabs):
     if len(list_tabs) == 0:
         print("No tabs open to display content. Please open a tab before attempting to display.")
@@ -59,13 +74,30 @@ def switchTab(list_tabs):
         if index_tab.isdigit():
             index_tab = int(index_tab)
             if 0 <= index_tab < len(list_tabs):
-                pass
+             try:
+                weburl = urllib.request.urlopen(list_tabs[index_tab])
+                readUrl(weburl)
+             except HTTPError as e:
+                 print(f"HTTP Error: {e.code}")
+             except URLError as e:
+                 print(f"URL Error: {e.reason}")
+             except Exception as e:
+                 print(f"An unexpected error occurred: {e}")
+
             else:
                 print("invalid index , please enter a valid index")
         else:
             print("invalid index, please enter a valid integer index")
     else:
-        pass
+     try:
+        weburl = urllib.request.urlopen(list_tabs[-1])
+        readUrl(weburl)
+     except HTTPError as e:
+         print(f"HTTP Error: {e.code}")
+     except URLError as e:
+         print(f"URL Error: {e.reason}")
+     except Exception as e:
+         print(f"An unexpected error occurred: {e}")
 
 
 
