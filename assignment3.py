@@ -102,7 +102,7 @@ def sequentialSearch(s, list):  ## time complexity is O(n)
           print(f"{s} is found at index {i}")
           return i
     print(f"{s} is not found in the list")
-def insertionSort(list):  ## Time complexity is O(n^2)
+def selectionSort(list):  ## Time complexity is O(n^2)
     for x in range(len(list) - 1):
         for y in range(x + 1, len(list)):
             if list[x] > list[y]:
@@ -168,14 +168,14 @@ def main():  #### Overall Time Complexity is O(n^2)
    s = int(input("Enter an element to find :"))
    sequentialSearch(s, list)
    print("list is sorted :")
-   insertionSort(list)
+   selectionSort(list)
    main()
 
   elif choice == "7":
       exit()
   else:
       print("invalid input please try again.")
-      main()
+
 
 
 
