@@ -16,8 +16,8 @@ def openTab():
     title = input("Enter a title :")
     if title and title.isalnum():
      url = input("Enter the url :")
-     if url.startswith(('http://', 'https://')):
-        list.append(url)
+     if url.startswith(('http://', 'https://')):  # https://www.w3schools.com/python/ref_string_startswith.asp                                                        
+        list_tabs.append(url)                           # For .startwith method
         dict[title] = url
      else:
       print("Please type a valid url")
@@ -29,16 +29,16 @@ def openTab():
 
 def closeTab():
     index = input("Enter the index for the tab to close :")
-    if len(list) == 0:
+    if len(list_tabs) == 0:
         print("No tabs open to close. Please open a tab before attempting to close.")
-    elif index in list:
-     list.pop(int(index))
+    elif index in list_tabs:
+     list_tabs.pop(int(index))
      print(f"Closed tab at index {index}.")
     else:
-        list.pop()
+        list_tabs.pop()
 
 dict = {}
-list = []
+list_tabs = []
 
 def main():
     displayMenu()
@@ -47,7 +47,7 @@ def main():
         if choice == "1":
             openTab()
             print(dict)
-            print(list)
+            print(list_tabs)
             main()
         elif choice == "2":
             closeTab()
