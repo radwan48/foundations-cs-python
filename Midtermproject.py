@@ -1,6 +1,6 @@
 import urllib.request
 from urllib.error import URLError, HTTPError
-
+tabs = []
 
 
 def displayMenu():
@@ -21,8 +21,8 @@ def openTab():
     if title and title.isalnum():
      url = input("Enter the url :")
      if url.startswith(('http://', 'https://')):  # https://www.w3schools.com/python/ref_string_startswith.asp                                                        
-        list_tabs.append(url)                           # For .startwith method
-        opened_tabs[title] = url
+         opened_tabs = {'title' : title, 'url' : url}            # For .startwith method
+         tabs.append(opened_tabs)
      else:
       print("Please type a valid url")
       openTab()
@@ -32,22 +32,22 @@ def openTab():
 
 
 def closeTab():
-    if len(list_tabs) == 0:
+    if len(tabs) == 0:
         print("No tabs open to close. Please open a tab before attempting to close.")
         return
     index = input("Enter the index for the tab to close :")
     if index.strip():  ## to check if the input has empty string
         if index.isdigit():
             index = int(index)
-            if 0 <= index < len(list_tabs):
-              list_tabs.pop(index)
+            if 0 <= index < len(tabs):
+              tabs.pop(index)
               print(f"Closed tab at index {index}.")
             else:
                  print("Invalid index, please enter a valid index")
         else:
             print("Please enter a valid integer index")
     else:
-        list_tabs.pop(-1)
+        tabs.pop(-1)
         print("close last tab")
 
 
@@ -65,17 +65,17 @@ def readUrl(weburl):
 
 
 
-def switchTab(list_tabs):
-    if len(list_tabs) == 0:
+def switchTab(tabs):
+    if len(tabs) == 0:
         print("No tabs open to display content. Please open a tab before attempting to display.")
         return
     index_tab = input("Enter the index for the tab to display its content :")
     if index_tab.strip():
         if index_tab.isdigit():
             index_tab = int(index_tab)
-            if 0 <= index_tab < len(list_tabs):
+            if 0 <= index_tab < len(tabs):
              try:
-                weburl = urllib.request.urlopen(list_tabs[index_tab])
+                weburl = urllib.request.urlopen(tabs[index_tab].get('url'))
                 readUrl(weburl)
              except HTTPError as e:
                  print(f"HTTP Error: {e.code}")
@@ -90,7 +90,7 @@ def switchTab(list_tabs):
             print("invalid index, please enter a valid integer index")
     else:
      try:
-        weburl = urllib.request.urlopen(list_tabs[-1])
+        weburl = urllib.request.urlopen(tabs[-1].get('url'))
         readUrl(weburl)
      except HTTPError as e:
          print(f"HTTP Error: {e.code}")
@@ -102,8 +102,6 @@ def switchTab(list_tabs):
 
 
 
-opened_tabs = {}
-list_tabs = []
 
 def main():
     displayMenu()
@@ -111,16 +109,14 @@ def main():
     while choice != "9":
         if choice == "1":
             openTab()
-            print(opened_tabs)
-            print(list_tabs)
+            print(tabs)
             main()
         elif choice == "2":
             closeTab()
-            print(opened_tabs)
-            print(list_tabs)
+            print(tabs)
             main()
         elif choice == "3":
-            switchTab(list_tabs)
+            switchTab(tabs)
             main()
         elif choice == "4":
             pass
