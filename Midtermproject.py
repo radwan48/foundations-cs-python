@@ -39,7 +39,7 @@ def closeTab():
     if index.strip():  ## to check if the input has empty string
         if index.isdigit():
             index = int(index)
-            if 0 <= int(index) < len(list_tabs):
+            if 0 <= index < len(list_tabs):
               list_tabs.pop(index)
               print(f"Closed tab at index {index}.")
             else:
@@ -50,18 +50,22 @@ def closeTab():
         list_tabs.pop(-1)
         print("close last tab")
 
-def switchTab():
-    index_tab = input("Enter the index for the tab to display its content :")
+def switchTab(list_tabs):
     if len(list_tabs) == 0:
         print("No tabs open to display content. Please open a tab before attempting to display.")
-    elif index_tab in list_tabs:
-        for index_tab in range(len(list_tabs)):
-          print(str(list_tabs[index_tab]))
-      # display_url = request.urlopen(content)
-
+        return
+    index_tab = input("Enter the index for the tab to display its content :")
+    if index_tab.strip():
+        if index_tab.isdigit():
+            index_tab = int(index_tab)
+            if 0 <= index_tab < len(list_tabs):
+                pass
+            else:
+                print("invalid index , please enter a valid index")
+        else:
+            print("invalid index, please enter a valid integer index")
     else:
-        print(str((list_tabs[len(list_tabs)-1])))
-
+        pass
 
 
 
@@ -84,7 +88,7 @@ def main():
             print(list_tabs)
             main()
         elif choice == "3":
-            switchTab()
+            switchTab(list_tabs)
             main()
         elif choice == "4":
             pass
