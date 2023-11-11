@@ -26,7 +26,7 @@ def openTab():
          opened_tabs = {'title' : title, 'url' : url}            # For .startwith method
          tabs.append(opened_tabs)
      else:
-      print("Please type a enter url")
+      print("Please type a valid url")
       openTab()
     else:
         print("Please enter an a valid title for url")
@@ -143,16 +143,20 @@ def displayTitles(tabs):
         print("There is no tab yet to display titles")
 
 
-def saveTabs():  ## https://opensource.com/article/19/7/save-and-load-data-python-json
+def saveTabs(tabs):  ## https://opensource.com/article/19/7/save-and-load-data-python-json
    if len(tabs) != 0:
-     file_path = input("Enter the file path to save the tabs")
+     file_path = input("Enter the file path to save the tabs: ")
      with open(file_path, 'w') as f:
          json.dump(tabs, f)
          print(f"Saved tabs into {file_path}")
    else:
        print("No tabs to save")
 
-
+def importTab():
+    file_path = input("Enter a file path to load : ")
+    with open(file_path) as f:
+        load = json.load(f)
+        print(load)
 
 
 def main():
@@ -182,9 +186,11 @@ def main():
             main()
 
         elif choice == "7":
-            saveTabs()
+            saveTabs(tabs)
+            main()
         elif choice == "8":
-            pass
+            importTab()
+            main()
         else:
             print("invalid input, please try again")
             main()
