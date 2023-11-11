@@ -1,5 +1,8 @@
 import urllib.request
 from urllib.error import URLError, HTTPError
+
+ ## CANT IMPORT : From bs4 import BeautifulSoup
+
 tabs = []
 
 
@@ -48,13 +51,15 @@ def closeTab():
             print("Please enter a valid integer index")
     else:
         tabs.pop(-1)
-        print("close last tab")
+        print("Closed last tab")
 
 
-def readUrl(weburl):
+
+
+def readUrl(weburl):    ##https://en.wikipedia.org/wiki/Beautiful_Soup_(HTML_parser)
     try:
       data = weburl.read()
-      print(str(data))
+      print(data)
     except HTTPError as e:
         print(f"HTTP Error: {e.code}")
     except URLError as e:
@@ -75,7 +80,7 @@ def switchTab(tabs):
             index_tab = int(index_tab)
             if 0 <= index_tab < len(tabs):
              try:
-                weburl = urllib.request.urlopen(tabs[index_tab].get('url'))
+                weburl = urllib.request.urlopen(tabs[index_tab]['url'])
                 readUrl(weburl)
              except HTTPError as e:
                  print(f"HTTP Error: {e.code}")
@@ -90,7 +95,7 @@ def switchTab(tabs):
             print("invalid index, please enter a valid integer index")
     else:
      try:
-        weburl = urllib.request.urlopen(tabs[-1].get('url'))
+        weburl = urllib.request.urlopen(tabs[-1]['url'])
         readUrl(weburl)
      except HTTPError as e:
          print(f"HTTP Error: {e.code}")
@@ -131,6 +136,10 @@ def main():
         else:
             print("invalid input, please try again")
             main()
+    else:
+        exit()
+
+
 
 
 
