@@ -182,7 +182,7 @@ def main():
             main()
 
         elif choice == "7":
-            pass
+            saveTabs()
         elif choice == "8":
             pass
         else:
