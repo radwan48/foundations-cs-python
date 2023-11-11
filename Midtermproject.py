@@ -113,11 +113,11 @@ def openNestedTabs():
     if nested_index.strip and nested_index.isdigit():
         nested_index = int(nested_index)
         if 0 <= nested_index < len(tabs):
-            new_title = input("Title :")
-            if new_title and new_title.isalnum():
+            title = input("Title :")
+            if title and title.isalnum():
                 new_url = input("Enter url :")
                 if new_url.startswith(('http://', 'https://')):
-                    tabs[nested_index][new_title] = new_url
+                    tabs[nested_index][title] = new_url
                 else:
                     print("Please type a enter url")
                     openNestedTabs()
@@ -130,6 +130,18 @@ def openNestedTabs():
       print("Invalid index , please enter a valid index")
       openNestedTabs()
 
+
+def clearAllTabs():
+    tabs.clear()
+    print("Cleared all opened tabs")
+
+
+def displayTitles(tabs):
+    if len(tabs) != 0:
+     for tab in tabs:
+         print(tab.get('title'))
+    else:
+        print("There is no tab yet to display titles")
 
 
 
@@ -151,12 +163,16 @@ def main():
             switchTab(tabs)
             main()
         elif choice == "4":
-            pass
+            displayTitles(tabs)
+            main()
         elif choice == "5":
             openNestedTabs()
             main()
         elif choice == "6":
-            pass
+            clearAllTabs()
+            print(tabs)
+            main()
+
         elif choice == "7":
             pass
         elif choice == "8":
