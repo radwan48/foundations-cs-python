@@ -27,7 +27,7 @@ def openTab():
          opened_tabs = {'title' : title, 'url' : url}            # For .startwith method
          tabs.append(opened_tabs)
      else:
-      print("Please type a valid url")
+      print("Please type a enter url")
       openTab()
     else:
         print("Please enter an a valid title for url")
@@ -105,6 +105,33 @@ def switchTab(tabs):
          print(f"An unexpected error occurred: {e}")
 
 
+def openNestedTabs():
+    if len(tabs) == 0:
+        print("Cant open Nested tab, since tabs are empty")
+        return
+    nested_index = input("Please specify the index of parent tab where you want to add the nested tab")
+    if nested_index.strip and nested_index.isdigit():
+        nested_index = int(nested_index)
+        if 0 <= nested_index < len(tabs):
+            new_title = input("Title :")
+            if new_title and new_title.isalnum():
+                new_url = input("Enter url :")
+                if new_url.startswith(('http://', 'https://')):
+                    tabs[nested_index][new_title] = new_url
+                else:
+                    print("Please type a enter url")
+                    openNestedTabs()
+            else:
+                print("Please enter an a valid title for url")
+        else:
+            print("Invalid index, Index not found")
+            openNestedTabs()
+    else:
+      print("Invalid index , please enter a valid index")
+      openNestedTabs()
+
+
+
 
 
 
@@ -126,7 +153,8 @@ def main():
         elif choice == "4":
             pass
         elif choice == "5":
-            pass
+            openNestedTabs()
+            main()
         elif choice == "6":
             pass
         elif choice == "7":
