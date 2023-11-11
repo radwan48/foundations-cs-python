@@ -1,10 +1,9 @@
 import urllib.request
 from urllib.error import URLError, HTTPError
-
+import json
  ## CANT IMPORT : From bs4 import BeautifulSoup
-
 tabs = []
-
+global nested_tabs
 
 def displayMenu():
     print("1. Open Tab\n"
@@ -117,7 +116,7 @@ def openNestedTabs():
             if title and title.isalnum():
                 new_url = input("Enter url :")
                 if new_url.startswith(('http://', 'https://')):
-                    tabs[nested_index][title] = new_url
+                   tabs[nested_index][title] = new_url
                 else:
                     print("Please type a enter url")
                     openNestedTabs()
@@ -143,6 +142,15 @@ def displayTitles(tabs):
     else:
         print("There is no tab yet to display titles")
 
+
+def saveTabs():  ## https://opensource.com/article/19/7/save-and-load-data-python-json
+   if len(tabs) != 0:
+     file_path = input("Enter the file path to save the tabs")
+     with open(file_path, 'w') as f:
+         json.dump(tabs, f)
+         print(f"Saved tabs into {file_path}")
+   else:
+       print("No tabs to save")
 
 
 
