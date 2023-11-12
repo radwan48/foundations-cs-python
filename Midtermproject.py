@@ -141,8 +141,7 @@ def clearAllTabs():
 
 
 def displayTitles(tabs):
-    if len(tabs) == 0:
-        print("There is no tab yet to display titles")
+    if not isEmptytabs("There is no tab yet to display titles"):
         return
     for tab in tabs:
          print(tab.get('title'))
