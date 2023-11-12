@@ -112,7 +112,7 @@ def switchTab(tabs):
 def openNestedTabs():
     if not isEmptytabs("Cant open Nested tab, since tabs are empty"):
         return
-    nested_index = input("Please specify the index of parent tab where you want to add the nested tab")
+    nested_index = input("Please specify the index of parent tab where you want to add the nested tab :")
     if nested_index.strip():
         if not nested_index.isdigit():
             print("index must be number")
