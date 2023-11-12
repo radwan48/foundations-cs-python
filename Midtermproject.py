@@ -114,21 +114,20 @@ def openNestedTabs():
             print("index must be number")
             return
         nested_index = int(nested_index)
-        if 0 <= nested_index < len(tabs):
-            title = input("Title :")
-            if title and title.isalnum():
-                new_url = input("Enter url :")
-                if new_url.startswith(('http://', 'https://')):
-
-                  nested_tabs = tabs[nested_index][title] = new_url
-                else:
-                    print("Please type a enter url")
-
-            else:
-                print("Please enter an a valid title for url")
-        else:
+        if not (0 <= nested_index < len(tabs)):
             print("Invalid index, Index not found")
+            return
+        title = input("Title :")
+        if title and title.isalnum():
+            new_url = input("Enter url :")
+            if new_url.startswith(('http://', 'https://')):
 
+                nested_tabs = tabs[nested_index][title] = new_url
+            else:
+                 print("Please type a enter url")
+
+        else:
+             print("Please enter an a valid title for url")
     else:
       print("Invalid index , please enter a valid index")
 
