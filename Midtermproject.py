@@ -33,7 +33,7 @@ def openTab():
         openTab()
 
 
-def isEmptytabs(message="Tabs are empty"):
+def isEmptytabs(message=""):
     if len(tabs) == 0:
         print(message)
         return False
@@ -76,8 +76,7 @@ def readUrl(weburl):    ##https://en.wikipedia.org/wiki/Beautiful_Soup_(HTML_par
 
 
 def switchTab(tabs):
-    if len(tabs) == 0:
-        print("No tabs open to display content. Please open a tab before attempting to display.")
+    if not isEmptytabs("No tabs open to display content. Please open a tab before attempting to display."):
         return
     index_tab = input("Enter the index for the tab to display its content :")
     if index_tab.strip():
