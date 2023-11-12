@@ -22,7 +22,7 @@ def openTab():
     title = input("Enter a title :")
     if title and title.isalnum():
      url = input("Enter the url :")
-     if url.startswith(('http://', 'https://', 'www')):  # https://www.w3schools.com/python/ref_string_startswith.asp
+     if url.startswith(('http://', 'https://', 'www.')):  # https://www.w3schools.com/python/ref_string_startswith.asp
          opened_tabs = {'title' : title, 'url' : url}            # For .startwith method
          tabs.append(opened_tabs)
      else:
@@ -122,8 +122,8 @@ def openNestedTabs():
             print("Please enter an a valid title for url")
             return
         new_url = input("Enter url :")
-        if new_url.startswith(('http://', 'https://')):
-             nested_tabs = tabs[nested_index][title] = new_url
+        if new_url.startswith(('http://', 'https://', 'www.')):
+             tabs[nested_index][title] = new_url
         else:
             print("Please type a valid url")
     else:
