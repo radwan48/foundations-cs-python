@@ -118,16 +118,14 @@ def openNestedTabs():
             print("Invalid index, Index not found")
             return
         title = input("Title :")
-        if title and title.isalnum():
-            new_url = input("Enter url :")
-            if new_url.startswith(('http://', 'https://')):
-
-                nested_tabs = tabs[nested_index][title] = new_url
-            else:
-                 print("Please type a enter url")
-
+        if not title or not title.isalnum():
+            print("Please enter an a valid title for url")
+            return
+        new_url = input("Enter url :")
+        if new_url.startswith(('http://', 'https://')):
+             nested_tabs = tabs[nested_index][title] = new_url
         else:
-             print("Please enter an a valid title for url")
+            print("Please type a valid url")
     else:
       print("Invalid index , please enter a valid index")
 
