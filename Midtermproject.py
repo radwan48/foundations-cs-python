@@ -3,7 +3,7 @@ from urllib.error import URLError, HTTPError
 import json
  ## CANT IMPORT : From bs4 import BeautifulSoup
 tabs = []
-global nested_tabs
+
 
 def displayMenu():
     print("1. Open Tab\n"
@@ -56,7 +56,7 @@ def closeTab():
 
 
 def readUrl(weburl):    ##https://en.wikipedia.org/wiki/Beautiful_Soup_(HTML_parser)
-    try:
+    try:  ## https://www.w3schools.com/python/python_try_except.asp
       data = weburl.read()
       print(data)
     except HTTPError as e:
