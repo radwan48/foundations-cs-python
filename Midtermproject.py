@@ -182,11 +182,9 @@ def main():  # worst case is O(n)
     while choice != "9":
         if choice == "1":
             openTab()
-            print(tabs)
             main()
         elif choice == "2":
             closeTab()
-            print(tabs)
             main()
         elif choice == "3":
             switchTab(tabs)
@@ -199,7 +197,6 @@ def main():  # worst case is O(n)
             main()
         elif choice == "6":
             clearAllTabs()
-            print(tabs)
             main()
 
         elif choice == "7":
