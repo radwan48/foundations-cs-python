@@ -110,8 +110,7 @@ def switchTab(tabs):
 
 
 def openNestedTabs():
-    if len(tabs) == 0:
-        print("Cant open Nested tab, since tabs are empty")
+    if not isEmptytabs("Cant open Nested tab, since tabs are empty"):
         return
     nested_index = input("Please specify the index of parent tab where you want to add the nested tab")
     if nested_index.strip():
