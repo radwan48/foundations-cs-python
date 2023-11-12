@@ -33,6 +33,13 @@ def openTab():
         openTab()
 
 
+def isEmptytabs(message="Tabs are empty"):
+    if len(tabs) == 0:
+        print(message)
+        return False
+    return True
+
+
 def closeTab():
     if len(tabs) == 0:
         print("No tabs open to close. Please open a tab before attempting to close.")
