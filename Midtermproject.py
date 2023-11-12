@@ -148,8 +148,7 @@ def displayTitles(tabs):
 
 
 def saveTabs(tabs):  ## https://opensource.com/article/19/7/save-and-load-data-python-json
-   if len(tabs) == 0:
-       print("No tabs to save")
+   if not isEmptytabs("No tabs to save"):
        return
    file_path = input("Enter the file path to save the tabs: ")
    with open(file_path, 'w') as f:
@@ -159,9 +158,14 @@ def saveTabs(tabs):  ## https://opensource.com/article/19/7/save-and-load-data-p
 
 def importTab():
     file_path = input("Enter a file path to load : ")
-    with open(file_path) as f:
-        load = json.load(f)
-        print(load)
+    try:
+     with open(file_path) as f:
+       load = json.load(f)
+       print(load)
+    except ValueError as f:
+        print(f"Value error: {f}")
+    except Exception as f:
+        print(f"An unexpected error occurred: {f}")
 
 
 def main():
