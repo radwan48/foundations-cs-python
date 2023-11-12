@@ -3,7 +3,7 @@ from urllib.error import URLError, HTTPError
 import json
  ## CANT IMPORT : From bs4 import BeautifulSoup
 tabs = []
-
+import bs4
 
 def displayMenu():
     print("1. Open Tab\n"
@@ -22,7 +22,7 @@ def openTab():
     title = input("Enter a title :")
     if title and title.isalnum():
      url = input("Enter the url :")
-     if url.startswith(('http://', 'https://')):  # https://www.w3schools.com/python/ref_string_startswith.asp                                                        
+     if url.startswith(('http://', 'https://', 'www')):  # https://www.w3schools.com/python/ref_string_startswith.asp
          opened_tabs = {'title' : title, 'url' : url}            # For .startwith method
          tabs.append(opened_tabs)
      else:
