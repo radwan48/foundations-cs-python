@@ -3,7 +3,7 @@ from urllib.error import URLError, HTTPError
 import json
  ## CANT IMPORT : From bs4 import BeautifulSoup
 tabs = []
-import bs4
+
 
 def displayMenu():
     print("1. Open Tab\n"
@@ -57,13 +57,13 @@ def closeTab():
 
 def readUrl(weburl):    ##https://en.wikipedia.org/wiki/Beautiful_Soup_(HTML_parser)
     try:  ## https://www.w3schools.com/python/python_try_except.asp
-      data = weburl.read()
+      data = weburl.read()  # try to do this block of code
       print(data)
-    except HTTPError as e:
+    except HTTPError as e:                # except these HTTP errors and url errors
         print(f"HTTP Error: {e.code}")
     except URLError as e:
          print(f"URL Error: {e.reason}")
-    except Exception as e:
+    except Exception as e:                # except any unexpected error other than http and url errors
        print(f"An unexpected error occurred: {e}")
 
 
@@ -109,25 +109,29 @@ def openNestedTabs():
         print("Cant open Nested tab, since tabs are empty")
         return
     nested_index = input("Please specify the index of parent tab where you want to add the nested tab")
-    if nested_index.strip and nested_index.isdigit():
+    if nested_index.strip():
+        if not nested_index.isdigit():
+            print("index must be number")
+            return
         nested_index = int(nested_index)
         if 0 <= nested_index < len(tabs):
             title = input("Title :")
             if title and title.isalnum():
                 new_url = input("Enter url :")
                 if new_url.startswith(('http://', 'https://')):
-                   tabs[nested_index][title] = new_url
+
+                  nested_tabs = tabs[nested_index][title] = new_url
                 else:
                     print("Please type a enter url")
-                    openNestedTabs()
+
             else:
                 print("Please enter an a valid title for url")
         else:
             print("Invalid index, Index not found")
-            openNestedTabs()
+
     else:
       print("Invalid index , please enter a valid index")
-      openNestedTabs()
+
 
 
 def clearAllTabs():
@@ -144,13 +148,14 @@ def displayTitles(tabs):
 
 
 def saveTabs(tabs):  ## https://opensource.com/article/19/7/save-and-load-data-python-json
-   if len(tabs) != 0:
-     file_path = input("Enter the file path to save the tabs: ")
-     with open(file_path, 'w') as f:
-         json.dump(tabs, f)
-         print(f"Saved tabs into {file_path}")
-   else:
+   if len(tabs) == 0:
        print("No tabs to save")
+       return
+   file_path = input("Enter the file path to save the tabs: ")
+   with open(file_path, 'w') as f:
+    json.dump(tabs, f)
+    print(f"Saved tabs into {file_path}")
+
 
 def importTab():
     file_path = input("Enter a file path to load : ")
@@ -176,6 +181,7 @@ def main():
             main()
         elif choice == "4":
             displayTitles(tabs)
+            print(nested_tabs)
             main()
         elif choice == "5":
             openNestedTabs()
