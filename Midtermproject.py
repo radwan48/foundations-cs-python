@@ -5,7 +5,7 @@ import json
 tabs = []
 
 
-def displayMenu():
+def displayMenu(): # displaying menu for the user
     print("1. Open Tab\n"
         + "2. Close Tab\n"
         + "3. Switch Tab\n"
@@ -171,7 +171,10 @@ def importTab():
         print(f"An unexpected error occurred: {f}")
 
 
+
+print("Hello user")
 def main():
+
     displayMenu()
     choice = input("Enter your choice :")
     while choice != "9":
