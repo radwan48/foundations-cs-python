@@ -41,8 +41,7 @@ def isEmptytabs(message="Tabs are empty"):
 
 
 def closeTab():
-    if len(tabs) == 0:
-        print("No tabs open to close. Please open a tab before attempting to close.")
+    if not isEmptytabs("No tabs open to close. Please open a tab before attempting to close."):
         return
     index = input("Enter the index for the tab to close :")
     if index.strip():  ## to check if the input has empty string
