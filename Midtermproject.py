@@ -137,11 +137,11 @@ def clearAllTabs():
 
 
 def displayTitles(tabs):
-    if len(tabs) != 0:
-     for tab in tabs:
-         print(tab.get('title'))
-    else:
+    if len(tabs) == 0:
         print("There is no tab yet to display titles")
+        return
+    for tab in tabs:
+         print(tab.get('title'))
 
 
 def saveTabs(tabs):  ## https://opensource.com/article/19/7/save-and-load-data-python-json
@@ -178,7 +178,6 @@ def main():
             main()
         elif choice == "4":
             displayTitles(tabs)
-            print(nested_tabs)
             main()
         elif choice == "5":
             openNestedTabs()
