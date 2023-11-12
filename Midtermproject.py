@@ -151,9 +151,12 @@ def saveTabs(tabs):  ## https://opensource.com/article/19/7/save-and-load-data-p
    if not isEmptytabs("No tabs to save"):
        return
    file_path = input("Enter the file path to save the tabs: ")
-   with open(file_path, 'w') as f:
-    json.dump(tabs, f)
-    print(f"Saved tabs into {file_path}")
+   try:
+     with open(file_path, 'w') as f:
+      json.dump(tabs, f)
+      print(f"Saved tabs into {file_path}")
+   except Exception as f:  ## cant find on the internet handling error blocks
+       print(f"An unexpected error occurred: {f}")
 
 
 def importTab():
