@@ -1,7 +1,9 @@
 import urllib.request
 from urllib.error import URLError, HTTPError
 import json
- ## CANT IMPORT : From bs4 import BeautifulSoup
+
+  # Cant import urlib3
+  # CANT IMPORT : From bs4 import BeautifulSoup
 tabs = []
 
 
@@ -17,37 +19,37 @@ def displayMenu(): # displaying menu for the user
         + "9. Exit")
 
 
-def openTab():
+def openTab():  # worst case is O(n)
 
     title = input("Enter a title :")
-    if title and title.isalnum():
+    if title and title.isalnum():  #if title is not empty and doesn't have symbols
      url = input("Enter the url :")
      if url.startswith(('http://', 'https://', 'www.')):  # https://www.w3schools.com/python/ref_string_startswith.asp
          opened_tabs = {'title' : title, 'url' : url}            # For .startwith method
-         tabs.append(opened_tabs)
+         tabs.append(opened_tabs)                # add dictionary opened_tabs to tabs list
      else:
       print("Please type a valid url")
-      openTab()
+      openTab()              # if it is invalid url we call the openTab func again
     else:
         print("Please enter an a valid title for url")
         openTab()
 
 
-def isEmptytabs(message=""):
-    if len(tabs) == 0:
-        print(message)
+def isEmptytabs(message=""):  # worst case O(1)  # message will be a string to be orinted
+    if len(tabs) == 0:    # if tabs is empty
+        print(message)    # I will use this message in function with different strings
         return False
     return True
 
 
-def closeTab():
+def closeTab():  # worst case time complexity is O(n)
     if not isEmptytabs("No tabs open to close. Please open a tab before attempting to close."):
-        return
+        return  # return to exit the code and return nothing
     index = input("Enter the index for the tab to close :")
-    if index.strip():  ## to check if the input has empty string
-        if index.isdigit():
+    if index.strip():  ## to check if the input has empty string so here if it is not empty
+        if index.isdigit():  ## check if index is a number
             index = int(index)
-            if 0 <= index < len(tabs):
+            if 0 <= index < len(tabs):  #  if index between the length of tabs
               tabs.pop(index)
               print(f"Closed tab at index {index}.")
             else:
@@ -61,7 +63,7 @@ def closeTab():
 
 
 
-def readUrl(weburl):    ##https://en.wikipedia.org/wiki/Beautiful_Soup_(HTML_parser)
+def readUrl(weburl):    ##https://en.wikipedia.org/wiki/Beautiful_Soup_(HTML_parser) # worst case is O(n)
     try:  ## https://www.w3schools.com/python/python_try_except.asp
       data = weburl.read()  # try to do this block of code
       print(data)
@@ -75,7 +77,7 @@ def readUrl(weburl):    ##https://en.wikipedia.org/wiki/Beautiful_Soup_(HTML_par
 
 
 
-def switchTab(tabs):
+def switchTab(tabs): ## worst case is O(n)
     if not isEmptytabs("No tabs open to display content. Please open a tab before attempting to display."):
         return
     index_tab = input("Enter the index for the tab to display its content :")
@@ -84,8 +86,8 @@ def switchTab(tabs):
             index_tab = int(index_tab)
             if 0 <= index_tab < len(tabs):
              try:
-                weburl = urllib.request.urlopen(tabs[index_tab]['url'])
-                readUrl(weburl)
+                weburl = urllib.request.urlopen(tabs[index_tab]['url'])  # I used this method to open the specific url
+                readUrl(weburl)                                          # which it's in list tab at index_tab at 'url'
              except HTTPError as e:
                  print(f"HTTP Error: {e.code}")
              except URLError as e:
@@ -99,26 +101,26 @@ def switchTab(tabs):
             print("invalid index, please enter a valid integer index")
     else:
      try:
-        weburl = urllib.request.urlopen(tabs[-1]['url'])
+        weburl = urllib.request.urlopen(tabs[-1]['url'])  # this will display last tab html content
         readUrl(weburl)
-     except HTTPError as e:
+     except HTTPError as e:  # handling HTTP error and url erros
          print(f"HTTP Error: {e.code}")
      except URLError as e:
-         print(f"URL Error: {e.reason}")
+         print(f"URL Error: {e.reason}")  # except any unexpected error other than http and url errors
      except Exception as e:
          print(f"An unexpected error occurred: {e}")
 
 
-def openNestedTabs():
+def openNestedTabs():  # worst case is O(n)
     if not isEmptytabs("Cant open Nested tab, since tabs are empty"):
         return
     nested_index = input("Please specify the index of parent tab where you want to add the nested tab :")
-    if nested_index.strip():
-        if not nested_index.isdigit():
+    if nested_index.strip():  # if it is not empty
+        if not nested_index.isdigit():  # if user type other than digits it will return nothing and will print a message
             print("index must be number")
             return
-        nested_index = int(nested_index)
-        if not (0 <= nested_index < len(tabs)):
+        nested_index = int(nested_index)  # casting from  a sting input to integer to be the index
+        if not (0 <= nested_index < len(tabs)):  # if index is not in tabs it will return nothing
             print("Invalid index, Index not found")
             return
         title = input("Title :")
@@ -126,28 +128,28 @@ def openNestedTabs():
             print("Please enter an a valid title for url")
             return
         new_url = input("Enter url :")
-        if new_url.startswith(('http://', 'https://', 'www.')):
-             tabs[nested_index][title] = new_url
+        if new_url.startswith(('http://', 'https://', 'www.')):  # url should start with https:// or http:// or www.
+             tabs[nested_index][title] = new_url           # add dictionary to opened tab
         else:
-            print("Please type a valid url")
+            print("Please type a valid url")   # url doesn't start with the requirements, so it will print this message
     else:
       print("Invalid index , please enter a valid index")
 
 
 
-def clearAllTabs():
-    tabs.clear()
+def clearAllTabs():  # worst case is O(n)
+    tabs.clear()  #Clear  all tabs
     print("Cleared all opened tabs")
 
 
-def displayTitles(tabs):
+def displayTitles(tabs):  # worst case is O(n)
     if not isEmptytabs("There is no tab yet to display titles"):
         return
     for tab in tabs:
-         print(tab.get('title'))
+         print(tab.get('title'))   # print titles in tabs
 
 
-def saveTabs(tabs):  ## https://opensource.com/article/19/7/save-and-load-data-python-json
+def saveTabs(tabs):   # worst case is O(n)           ## https://opensource.com/article/19/7/save-and-load-data-python-json
    if not isEmptytabs("No tabs to save"):
        return
    file_path = input("Enter the file path to save the tabs: ")
@@ -159,21 +161,21 @@ def saveTabs(tabs):  ## https://opensource.com/article/19/7/save-and-load-data-p
        print(f"An unexpected error occurred: {f}")
 
 
-def importTab():
-    file_path = input("Enter a file path to load : ")
-    try:
-     with open(file_path) as f:
-       load = json.load(f)
-       print(load)
-    except ValueError as f:
+def importTab():  # worst case is O(n)
+    file_path = input("Enter a file path to load : ")  #input a strint for file path
+    try:                                    # try
+     with open(file_path) as f:        # | #this block of code
+       load = json.load(f)             # |  load the file
+       print(load)                     # | print the content
+    except ValueError as f:                                  # handling Value error using except
         print(f"Value error: {f}")
     except Exception as f:
         print(f"An unexpected error occurred: {f}")
 
 
 
-print("Hello user")
-def main():
+print("Hello User")
+def main():  # worst case is O(n)
 
     displayMenu()
     choice = input("Enter your choice :")
@@ -215,7 +217,4 @@ def main():
 
 
 
-
-
-if __name__ == '__main__':
-    main()
+main()
