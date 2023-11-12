@@ -23,15 +23,15 @@ def openTab():  # worst case is O(n)
 
     title = input("Enter a title :")
     if title and title.isalnum():  #if title is not empty and doesn't have symbols
-     url = input("Enter the url :")
-     if url.startswith(('http://', 'https://', 'www.')):  # https://www.w3schools.com/python/ref_string_startswith.asp
+      url = input("Enter the url :")
+      if url.startswith(('http://', 'https://', 'www.')):  # https://www.w3schools.com/python/ref_string_startswith.asp
          opened_tabs = {'title' : title, 'url' : url}            # For .startwith method
          tabs.append(opened_tabs)                # add dictionary opened_tabs to tabs list
-     else:
-      print("Please type a valid url")
-      openTab()              # if it is invalid url we call the openTab func again
+      else:
+       print("Please type a valid url")
+       openTab()              # if it is invalid url we call the openTab func again
     else:
-        print("Please enter an a valid title for url")
+        print("Please enter a valid title for url")
         openTab()
 
 
@@ -210,8 +210,6 @@ def main():  # worst case is O(n)
             main()
     else:
         exit()
-
-
 
 
 main()
