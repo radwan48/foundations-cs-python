@@ -52,7 +52,7 @@ class Linkedlist:
         current = self.head
         previous = None
         while current:
-            if current == value:
+            if current.data == value:
                 if current == self.head:
                     self.head = current.next
                     if current == self.tail:
@@ -81,6 +81,8 @@ def inputNumeric(numeric_value):
     except ValueError:
             print("Please enter a valid numeric value.")
 
+
+
 def main():
     linked_list = Linkedlist()
     limit = 0
@@ -101,9 +103,9 @@ def main():
                 elif sub_choice == "b":
                     linked_list.displayNodes()
                 elif sub_choice == "c":
-                    value = input("Enter Node value to remove :")
-                    inputNumeric(value)
-                    searchand
+                    input_value = input("Enter Node value to remove :")
+                    inputNumeric(input_value)
+                    Linkedlist.searchAndRemove(input_value)
                 elif sub_choice == "d":
                     pass
                 else:
