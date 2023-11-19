@@ -23,7 +23,19 @@ def main():
         if choice == "1":
             pass
         elif choice == "2":
-            pass
+            while True:
+                displayMenuLl()
+                choice = input("Enter your choice :")
+                if choice == "a":
+                    pass
+                elif choice == "b":
+                    pass
+                elif choice == "c":
+                    pass
+                elif choice == "d":
+                    pass
+                else:
+                    pass
         elif choice == "3":
             pass
         elif choice == "4":
