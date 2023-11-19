@@ -34,6 +34,16 @@ class Linkedlist:
             new_node.next = None
         self.size += 1
 
+    def displayNodes(self):
+        if self.size == 0:
+            print("There is no Nodes to show, please add nodes first .")
+            return
+        temp = self.head
+        while temp:
+            print(temp.data, end=" --> ")
+            temp = temp.next
+        print("None")
+
 
 
 
@@ -66,7 +76,7 @@ def main():
                     except ValueError:
                         print("Please enter a valid numeric value.")
                 elif sub_choice == "b":
-                    pass
+                    linked_list.displayNodes()
                 elif sub_choice == "c":
                     pass
                 elif sub_choice == "d":
