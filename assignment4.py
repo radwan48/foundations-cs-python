@@ -36,13 +36,18 @@ class Linkedlist:
 
     def displayNodes(self):
         if self.size == 0:
-            print("There is no Nodes to show, please add nodes first .")
+            print("There is no Nodes to show, please add nodes first to display .")
             return
         temp = self.head
         while temp:
             print(temp.data, end=" --> ")
             temp = temp.next
         print("None")
+
+    def searchAndRemove(self, value):
+        if self.size == 0:
+            print("Cant search and delete the Node since no Nodes yet .")
+            return
 
 
 
