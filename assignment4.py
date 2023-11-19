@@ -48,11 +48,20 @@ class Linkedlist:
         if self.size == 0:
             print("Cant search and delete the Node since no Nodes yet .")
             return
-
-
-
-
-
+        current = self.head
+        previous = None
+        while current:
+            if current == value:
+                if current == self.head:
+                    self.head = current.next
+                    if current == self.tail:
+                        self.tail = None
+                else:
+                    previous.next = current.next
+                    if current == self.tail:
+                        self.tail = previous
+            previous = current
+            current = current.next
 
 
 def main():
