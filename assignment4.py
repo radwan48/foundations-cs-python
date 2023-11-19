@@ -60,8 +60,12 @@ class Linkedlist:
                     previous.next = current.next
                     if current == self.tail:
                         self.tail = previous
+                self.size -= 1
+                print(f"Node remove with value :{value} removed.")
+                return
             previous = current
             current = current.next
+            print(f"Node with value :{value} not found.")
 
 
 def main():
