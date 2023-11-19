@@ -105,7 +105,7 @@ def main():
                 elif sub_choice == "c":
                     input_value = input("Enter Node value to remove :")
                     inputNumeric(input_value)
-                    Linkedlist.searchAndRemove(input_value)
+                    linked_list.searchAndRemove(input_value)
                 elif sub_choice == "d":
                     pass
                 else:
