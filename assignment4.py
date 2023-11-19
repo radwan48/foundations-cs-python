@@ -10,7 +10,9 @@ def displayMenu():
 
 
 def main():
-    displayMenu()
+    while True:
+        displayMenu()
+        choice = input("Enter your choice :")
 
 
 
