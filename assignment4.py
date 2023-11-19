@@ -9,6 +9,8 @@ def displayMenu():
 
 
 
+def main():
+    displayMenu()
 
 
 
