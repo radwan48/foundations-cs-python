@@ -41,6 +41,7 @@ class Linkedlist:
 
 
 def main():
+    linked_list = Linkedlist()
     limit = 0
     choice = ""
     while limit < 4:
@@ -53,7 +54,17 @@ def main():
                 displayMenuLl()
                 sub_choice = input("Enter your choice :")
                 if sub_choice == "a":
-                    pass
+                    numeric_value = input("Enter a number to add: ")
+                    try:
+                        if "." in numeric_value or (numeric_value[0] == '-' and "." in numeric_value[1:]):
+                            numeric_value = float(numeric_value)
+                        elif numeric_value[0] == '-':
+                            numeric_value = int(numeric_value)
+                        else:
+                            numeric_value = int(numeric_value)
+                        linked_list.addNode(numeric_value)
+                    except ValueError:
+                        print("Please enter a valid numeric value.")
                 elif sub_choice == "b":
                     pass
                 elif sub_choice == "c":
