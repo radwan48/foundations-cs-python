@@ -12,6 +12,10 @@ def displayMenuLl():
           + "c. Search for & Delete Node\n"
           + "d. Return to main menu")
 
+class Node:
+    def __init__(self, data):
+        self.data = data
+        self.next = None
 
 
 
