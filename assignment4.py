@@ -6,6 +6,13 @@ def displayMenu():
         + "5. Graph\n"
         + "6. Exit")
 
+def displayMenuLl():
+    print("a. Add Node\n"
+          + "b. Display Nodes\n"
+          + "c. Search for & Delete Node\n"
+          + "d. Return to main menu")
+
+
 
 
 
