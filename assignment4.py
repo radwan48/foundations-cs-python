@@ -26,9 +26,13 @@ class Linkedlist:
         new_node = Node(data)
         if self.size == 0:
             self.head = new_node
+            self.tail = new_node
             new_node.next = None
         else:
-            pass
+            self.tail.next = new_node
+            self.tail = new_node
+            new_node.next = None
+        self.size += 1
 
 
 
