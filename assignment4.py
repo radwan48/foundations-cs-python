@@ -44,20 +44,6 @@ class Linkedlist:
             temp = temp.next
         print("None")
 
-def inputNumeric(numeric_value):
-
-    try:
-        if "." in numeric_value or (numeric_value[0] == '-' and "." in numeric_value[1:]):
-             numeric_value = float(numeric_value)
-        elif numeric_value[0] == '-':
-             numeric_value = int(numeric_value)
-        else:
-          numeric_value = int(numeric_value)
-
-    except ValueError:
-            print("Please enter a valid numeric value.")
-
-
 
     def searchAndRemove(self, value):
         if self.size == 0:
@@ -82,6 +68,18 @@ def inputNumeric(numeric_value):
             current = current.next
             print(f"Node with value :{value} not found.")
 
+def inputNumeric(numeric_value):
+
+    try:
+        if "." in numeric_value or (numeric_value[0] == '-' and "." in numeric_value[1:]):
+             numeric_value = float(numeric_value)
+        elif numeric_value[0] == '-':
+             numeric_value = int(numeric_value)
+        else:
+          numeric_value = int(numeric_value)
+
+    except ValueError:
+            print("Please enter a valid numeric value.")
 
 def main():
     linked_list = Linkedlist()
@@ -103,7 +101,9 @@ def main():
                 elif sub_choice == "b":
                     linked_list.displayNodes()
                 elif sub_choice == "c":
-                    pass
+                    value = input("Enter Node value to remove :")
+                    inputNumeric(value)
+                    searchand
                 elif sub_choice == "d":
                     pass
                 else:
