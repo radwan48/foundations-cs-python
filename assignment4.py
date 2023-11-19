@@ -21,6 +21,17 @@ class Linkedlist:
         self.head = None
         self.size = 0
 
+    def addNode(self, data):
+        new_node = Node(data)
+        if self.size == 0:
+            self.head = new_node
+            new_node.next = None
+        else:
+            pass
+
+
+
+
 
 
 
