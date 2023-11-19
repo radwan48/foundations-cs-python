@@ -17,25 +17,31 @@ def displayMenuLl():
 
 
 def main():
-    while True:
+    limit = 0
+    choice = ""
+    while limit < 4:
         displayMenu()
         choice = input("Enter your choice :")
         if choice == "1":
-            pass
-        elif choice == "2":
-            while True:
+            limit = 0
+            sub_choice = ""
+            while sub_choice != "d" and limit < 4:
                 displayMenuLl()
-                choice = input("Enter your choice :")
-                if choice == "a":
+                sub_choice = input("Enter your choice :")
+                if sub_choice == "a":
                     pass
-                elif choice == "b":
+                elif sub_choice == "b":
                     pass
-                elif choice == "c":
+                elif sub_choice == "c":
                     pass
-                elif choice == "d":
+                elif sub_choice == "d":
                     pass
                 else:
-                    pass
+                    limit += 1
+                    print("Invalid choice, please enter the correct choice.")
+                    print(f"You have {4 - limit} attempts left")
+        elif choice == "2":
+            pass
         elif choice == "3":
             pass
         elif choice == "4":
@@ -45,13 +51,16 @@ def main():
         elif choice == "6":
             exit()
         else:
+            limit += 1
             print("Invalid choice, please enter the correct choice.")
+            print(f"You have {4 - limit} attempts left")
 
 
 
 
 
-
+if __name__ == '__main__':
+    main()
 
 
 
