@@ -82,6 +82,9 @@ def inputNumeric(numeric_value):
             print("Please enter a valid numeric value.")
 
 def isPalindrome(s):
+    if len(s) == 0:
+        print("Empty string, please type a string")
+        return
     s = s.lower()
     list1 = list(s)
     list2 = []
