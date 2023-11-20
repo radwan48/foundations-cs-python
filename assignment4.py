@@ -97,6 +97,16 @@ def isPalindrome(s):
         print(f"{s} is not palindrome")
 
 
+class Student:
+    def __init__(self, name, midterm_grade, final_grade, good_attitude):
+        self.name = name
+        self.midterm_grade = midterm_grade
+        self.final_grade = final_grade
+        self.good_attitude = good_attitude
+
+
+
+
 
 def main():
     linked_list = Linkedlist()
