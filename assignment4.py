@@ -66,7 +66,7 @@ class Linkedlist:
                 return
             previous = current
             current = current.next
-            print(f"Node with value: {value} not found.")
+        print(f"Node with value: {value} not found.")
 
 def inputNumeric(numeric_value):
 
