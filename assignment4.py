@@ -62,11 +62,11 @@ class Linkedlist:
                     if current == self.tail:
                         self.tail = previous
                 self.size -= 1
-                print(f"Node remove with value :{value} removed.")
+                print(f"Node remove with value: {value} removed.")
                 return
             previous = current
             current = current.next
-            print(f"Node with value :{value} not found.")
+            print(f"Node with value: {value} not found.")
 
 def inputNumeric(numeric_value):
 
@@ -80,6 +80,18 @@ def inputNumeric(numeric_value):
 
     except ValueError:
             print("Please enter a valid numeric value.")
+
+def isPalindrome(s):
+    s = s.lower()
+    list1 = list(s)
+    list2 = []
+    original_list = list1.copy()
+    while list1:
+        list2.append(list1.pop())
+    if original_list == list2:
+        print(f"{s} is palindrome")
+    else:
+        print(f"{s} is not palindrome")
 
 
 
@@ -107,13 +119,14 @@ def main():
                     inputNumeric(input_value)
                     linked_list.searchAndRemove(input_value)
                 elif sub_choice == "d":
-                    pass
+                    main()
                 else:
                     limit += 1
                     print("Invalid choice, please enter the correct choice.")
                     print(f"You have {4 - limit} attempts left")
         elif choice == "2":
-            pass
+            palindrome_string = input("Enter a string to check if it is palindrome or not :")
+            isPalindrome(palindrome_string)
         elif choice == "3":
             pass
         elif choice == "4":
