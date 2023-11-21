@@ -120,6 +120,19 @@ class PriorityQueue:
             self.size += 1
         else:
             if node.student.good_attitude and not self.head.student.good_attitude:
+                pass
+            elif self.head.student.good_attitude and not node.student.good_attitude:
+                pass
+            else:
+                if node.student.final_grade > self.head.student.final_grade:
+                    pass
+                elif node.student.final_grade < self.head.student.final_grade:
+                    pass
+                else:
+                    if node.student.midterm_grade > self.head.student.midterm_grade:
+                        pass
+                    elif node.student.midterm_grade < self.head.student.midterm_grade:
+                        pass
 
 
 
