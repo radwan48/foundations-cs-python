@@ -121,20 +121,25 @@ class PriorityQueue:
         else:
             current = self.head
             previous = None
-            if node.student.good_attitude and not self.head.student.good_attitude:
-                pass
-            elif self.head.student.good_attitude and not node.student.good_attitude:
-                pass
-            else:
-                if node.student.final_grade > self.head.student.final_grade:
+            while current:
+             if node.student.good_attitude and not current.student.good_attitude:
+                 node.next = current
+                 if not previous:
+                     self.head = node
+                 else:
+                     previous.next = node
+             elif current.student.good_attitude and not node.student.good_attitude:
+                  pass
+             else:
+                 if node.student.final_grade > current.student.final_grade:
                     pass
-                elif node.student.final_grade < self.head.student.final_grade:
+                 elif node.student.final_grade < current.student.final_grade:
                     pass
-                else:
-                    if node.student.midterm_grade > self.head.student.midterm_grade:
+                 else:
+                    if node.student.midterm_grade > current.student.midterm_grade:
                         pass
-                    elif node.student.midterm_grade < self.head.student.midterm_grade:
-                        pass
+                    elif node.student.midterm_grade < current.student.midterm_grade:
+                         pass
 
 
 
