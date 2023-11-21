@@ -119,6 +119,8 @@ class PriorityQueue:
             self.head = node
             self.size += 1
         else:
+            current = self.head
+            previous = None
             if node.student.good_attitude and not self.head.student.good_attitude:
                 pass
             elif self.head.student.good_attitude and not node.student.good_attitude:
