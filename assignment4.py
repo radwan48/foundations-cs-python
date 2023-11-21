@@ -103,6 +103,13 @@ class Student:
         self.midterm_grade = midterm_grade
         self.final_grade = final_grade
         self.good_attitude = good_attitude
+class Node1:
+    def __init__(self, student):
+       self.student = student
+       self.next = None
+
+
+
 
 
 
