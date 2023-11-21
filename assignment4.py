@@ -122,41 +122,43 @@ class PriorityQueue:
             current = self.head
             previous = None
             while current:
-             if node.student.good_attitude and not current.student.good_attitude:
-                 node.next = current
-                 if not previous:
-                     self.head = node
-                 else:
-                     previous.next = node
-                 self.size += 1
-             elif current.student.good_attitude and not node.student.good_attitude:
-                 node.next = current.next
-                 current.next = node
-                 self.size += 1
-             else:
-                 if node.student.final_grade > current.student.final_grade:
-                    node.next = current
-                    if not previous:
-                        self.head = node
-                    else:
-                        previous.next = node
-                    self.size += 1
-                 elif node.student.final_grade < current.student.final_grade:
+                 if node.student.good_attitude and not current.student.good_attitude:
+                     node.next = current
+                     if not previous:
+                         self.head = node
+                     else:
+                         previous.next = node
+                     self.size += 1
+                 elif current.student.good_attitude and not node.student.good_attitude:
                      node.next = current.next
                      current.next = node
                      self.size += 1
                  else:
-                    if node.student.midterm_grade > current.student.midterm_grade:
+                     if node.student.final_grade > current.student.final_grade:
                         node.next = current
                         if not previous:
-                            pass
+                            self.head = node
                         else:
-                            self.size += 1
-                        pass
-                    elif node.student.midterm_grade < current.student.midterm_grade:
-                        node.next = current.next
-                        current.next = node
+                            previous.next = node
                         self.size += 1
+                     elif node.student.final_grade < current.student.final_grade:
+                         node.next = current.next
+                         current.next = node
+                         self.size += 1
+                     else:
+                        if node.student.midterm_grade > current.student.midterm_grade:
+                            node.next = current
+                            if not previous:
+                                self.head = node
+                            else:
+                                previous.next = node
+                                self.size += 1
+                        elif node.student.midterm_grade < current.student.midterm_grade:
+                            node.next = current.next
+                            current.next = node
+                            self.size += 1
+                     previous = current
+                     current = current.next
 
 
 
