@@ -245,7 +245,7 @@ def main():
             sub_choice = ""
             while sub_choice != "d" and limit < 4:
                 displayMenuLl()
-                sub_choice = input("Enter your choice :")
+                sub_choice = input("Enter your choice :").lower()
                 if sub_choice == "a":
                     numeric_value = input("Enter a number to add: ")
                     inputNumeric(numeric_value)
