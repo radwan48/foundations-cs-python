@@ -182,6 +182,27 @@ class PriorityQueue:
             current.next = None
             self.size -= 1
 
+def addStudent():
+    while True:
+       input_name = input("Enter student name: ")
+       if input_name.isalpha():
+           break
+       print("Please enter a valid name for the student.")
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -193,6 +214,7 @@ class PriorityQueue:
 
 def main():
     linked_list = Linkedlist()
+    priority_queue = PriorityQueue()
     limit = 0
     choice = ""
     while limit < 4:
