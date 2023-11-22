@@ -190,26 +190,42 @@ class PriorityQueue:
             self.size -= 1
 
     def addStudent(self):
-        while True:
+        limit = 0
+        max_attempts = 4
+        input_name = ""
+        input_midterm_grade = ""
+        input_final_grade = ""
+        input_good_attitude = ""
+
+        while limit < max_attempts:
            input_name = input("Enter student name: ")
            if input_name.isalpha():
                break
            print("Please enter a valid name for the student.")
+           limit += 1
+           print(f"you have {max_attempts - limit} attempts left")
 
-        while True:
+
+        while limit < max_attempts:
             input_midterm_grade = input(f"Enter midterm grade for {input_name}: ")
             if input_midterm_grade.isdigit() and 0 <= int(input_midterm_grade) < 100:
                 break
             print("Please enter a valid grade between 0 and 100.")
+            limit += 1
+            print(f"you have {max_attempts - limit} attempts left")
 
-        while True:
-            input_final_grade = input(f"Enter midterm grade for {input_name}: ")
+
+        while limit < max_attempts:
+            input_final_grade = input(f"Enter final grade for {input_name}: ")
             if input_final_grade.isdigit() and 0 <= int(input_final_grade) < 100:
                 break
             print("Please enter a valid grade between 0 and 100.")
+            limit += 1
+            print(f"you have {max_attempts - limit} attempts left")
 
-        while True:
-            input_good_attitude = input("Does this student have good(YES/Y) personality or not(NO/N)").lower()
+
+        while limit < max_attempts:
+            input_good_attitude = input("Does this student have good(YES/Y) personality or not(NO/N) :").lower()
             if input_good_attitude in ['yes', 'y']:
                 input_good_attitude = True
                 break
@@ -217,6 +233,8 @@ class PriorityQueue:
                 input_good_attitude = False
                 break
             print("Please enter either yes/y or no/n.")
+            limit += 1
+            print(f"you have {max_attempts - limit} attempts left")
 
         new_student = Student(input_name, input_midterm_grade , input_final_grade, input_good_attitude)
         self.enqueue(new_student)
