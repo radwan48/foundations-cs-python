@@ -182,35 +182,37 @@ class PriorityQueue:
             current.next = None
             self.size -= 1
 
-def addStudent():
-    while True:
-       input_name = input("Enter student name: ")
-       if input_name.isalpha():
-           break
-       print("Please enter a valid name for the student.")
+    def addStudent(self):
+        while True:
+           input_name = input("Enter student name: ")
+           if input_name.isalpha():
+               break
+           print("Please enter a valid name for the student.")
 
-    while True:
-        input_midterm_grade = input(f"Enter midterm grade for {input_name}: ")
-        if input_midterm_grade.isdigit() and 0 <= int(input_midterm_grade) < 100:
-            break
-        print("Please enter a valid grade between 0 and 100.")
+        while True:
+            input_midterm_grade = input(f"Enter midterm grade for {input_name}: ")
+            if input_midterm_grade.isdigit() and 0 <= int(input_midterm_grade) < 100:
+                break
+            print("Please enter a valid grade between 0 and 100.")
 
-    while True:
-        input_final_grade = input(f"Enter midterm grade for {input_name}: ")
-        if input_final_grade.isdigit() and 0 <= int(input_final_grade) < 100:
-            break
-        print("Please enter a valid grade between 0 and 100.")
+        while True:
+            input_final_grade = input(f"Enter midterm grade for {input_name}: ")
+            if input_final_grade.isdigit() and 0 <= int(input_final_grade) < 100:
+                break
+            print("Please enter a valid grade between 0 and 100.")
 
-    while True:
-        input_good_attitude = input("Does this student have good(YES/Y) personality or not(NO/N)").lower()
-        if input_good_attitude in ['yes', 'y']:
-            input_good_attitude = True
-            break
-        elif input_good_attitude in ['no', 'n']:
-            input_good_attitude = False
-            break
-        else:
+        while True:
+            input_good_attitude = input("Does this student have good(YES/Y) personality or not(NO/N)").lower()
+            if input_good_attitude in ['yes', 'y']:
+                input_good_attitude = True
+                break
+            elif input_good_attitude in ['no', 'n']:
+                input_good_attitude = False
+                break
             print("Please enter either yes/y or no/n.")
+
+
+
 
 
 
@@ -268,7 +270,7 @@ def main():
             palindrome_string = input("Enter a string to check if it is palindrome or not :")
             isPalindrome(palindrome_string)
         elif choice == "3":
-            pass
+            addStudent()
         elif choice == "4":
             pass
         elif choice == "5":
