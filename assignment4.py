@@ -205,10 +205,12 @@ def addStudent():
         input_good_attitude = input("Does this student have good(YES/Y) personality or not(NO/N)").lower()
         if input_good_attitude in ['yes', 'y']:
             input_good_attitude = True
-        elif input_good_attitude in ['no','n']:
+            break
+        elif input_good_attitude in ['no', 'n']:
             input_good_attitude = False
+            break
         else:
-            pass
+            print("Please enter either yes/y or no/n.")
 
 
 
