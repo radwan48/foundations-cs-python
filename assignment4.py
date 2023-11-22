@@ -12,6 +12,13 @@ def displayMenuLl():
           + "c. Search for & Delete Node\n"
           + "d. Return to main menu")
 
+
+def displayMenuStudent():
+    print("a. Add a student\n"
+          + "b. Interview a student\n"
+          + "c. Return to main menu")
+
+
 class Node:
     def __init__(self, data):
         self.data = data
@@ -225,21 +232,6 @@ class PriorityQueue:
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 def main():
     linked_list = Linkedlist()
     priority_queue = PriorityQueue()
@@ -274,7 +266,7 @@ def main():
             palindrome_string = input("Enter a string to check if it is palindrome or not :")
             isPalindrome(palindrome_string)
         elif choice == "3":
-            addStudent()
+             student_choice = input("Enter your choice :")
         elif choice == "4":
             pass
         elif choice == "5":
