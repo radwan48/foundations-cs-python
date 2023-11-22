@@ -168,6 +168,10 @@ class PriorityQueue:
             previous.next = node
             self.size += 1
 
+    def dequeue(self):
+        if self.size == 0:
+            print("")
+
 
 
 
