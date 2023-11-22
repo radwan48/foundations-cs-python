@@ -266,7 +266,21 @@ def main():
             palindrome_string = input("Enter a string to check if it is palindrome or not :")
             isPalindrome(palindrome_string)
         elif choice == "3":
-             student_choice = input("Enter your choice :")
+             limit = 0
+             student_choice = ""
+             while student_choice != 'c' and limit < 4:
+              displayMenuStudent()
+              student_choice = input("Enter your choice :").lower()
+              if student_choice == "a":
+                  pass
+              elif student_choice == "b":
+                  pass
+              elif student_choice == "c"
+                  pass
+              else:
+                  limit += 1
+                  print("Invalid choice, please enter the correct choice.")
+                  print(f"You have {4 - limit} attempts left")
         elif choice == "4":
             pass
         elif choice == "5":
