@@ -201,6 +201,16 @@ def addStudent():
             break
         print("Please enter a valid grade between 0 and 100.")
 
+    while True:
+        input_good_attitude = input("Does this student have good(YES/Y) personality or not(NO/N)").lower()
+        if input_good_attitude in ['yes', 'y']:
+            input_good_attitude = True
+        elif input_good_attitude in ['no','n']:
+            input_good_attitude = False
+        else:
+            pass
+
+
 
 
 
