@@ -172,11 +172,16 @@ class PriorityQueue:
         if self.size == 0:
             print("There are no students to interview with")
         elif self.size == 1:
-            print("///")
+            print(f"Interview will be with : {self.head.student.name}")
             self.head = None
             self.size -= 1
         else:
-            pass
+            print(f"Interview will be with : {self.head.student.name}")
+            current = self.head
+            self.head = self.head.next
+            current.next = None
+            self.size -= 1
+
 
 
 
