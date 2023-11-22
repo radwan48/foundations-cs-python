@@ -211,6 +211,10 @@ class PriorityQueue:
                 break
             print("Please enter either yes/y or no/n.")
 
+        new_student = Student(input_name, input_midterm_grade , input_final_grade, input_good_attitude)
+        self.enqueue(new_student)
+
+
 
 
 
