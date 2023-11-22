@@ -272,11 +272,11 @@ def main():
               displayMenuStudent()
               student_choice = input("Enter your choice :").lower()
               if student_choice == "a":
-                  pass
+                  priority_queue.addStudent()
               elif student_choice == "b":
-                  pass
-              elif student_choice == "c"
-                  pass
+                  priority_queue.dequeue()
+              elif student_choice == "c":
+                  main()
               else:
                   limit += 1
                   print("Invalid choice, please enter the correct choice.")
