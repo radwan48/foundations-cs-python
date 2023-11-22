@@ -195,6 +195,11 @@ def addStudent():
             break
         print("Please enter a valid grade between 0 and 100.")
 
+    while True:
+        input_final_grade = input(f"Enter midterm grade for {input_name}: ")
+        if input_final_grade.isdigit() and 0 <= int(input_final_grade) < 100:
+            break
+        print("Please enter a valid grade between 0 and 100.")
 
 
 
