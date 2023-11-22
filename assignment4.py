@@ -129,10 +129,12 @@ class PriorityQueue:
                      else:
                          previous.next = node
                      self.size += 1
+                     return
                  elif current.student.good_attitude and not node.student.good_attitude:
                      node.next = current.next
                      current.next = node
                      self.size += 1
+                     return
                  else:
                      if node.student.final_grade > current.student.final_grade:
                         node.next = current
@@ -141,10 +143,12 @@ class PriorityQueue:
                         else:
                             previous.next = node
                         self.size += 1
+                        return
                      elif node.student.final_grade < current.student.final_grade:
                          node.next = current.next
                          current.next = node
                          self.size += 1
+                         return
                      else:
                         if node.student.midterm_grade > current.student.midterm_grade:
                             node.next = current
@@ -153,12 +157,16 @@ class PriorityQueue:
                             else:
                                 previous.next = node
                                 self.size += 1
+                            return
                         elif node.student.midterm_grade < current.student.midterm_grade:
                             node.next = current.next
                             current.next = node
                             self.size += 1
+                            return
                      previous = current
                      current = current.next
+            previous.next = node
+            self.size += 1
 
 
 
