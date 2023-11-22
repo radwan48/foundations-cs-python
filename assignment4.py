@@ -170,7 +170,13 @@ class PriorityQueue:
 
     def dequeue(self):
         if self.size == 0:
+            print("There are no students to interview with")
+        elif self.size == 1:
             print("")
+            self.head = None
+            self.size -= 1
+        else:
+            pass
 
 
 
