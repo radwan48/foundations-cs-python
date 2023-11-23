@@ -143,7 +143,9 @@ class PriorityQueue:
                      self.size += 1
                      return
                  else:
-                     if node.student.final_grade > current.student.final_grade:
+                     if (node.student.final_grade > current.student.final_grade or
+                      (node.student.final_grade == current.student.final_grade
+                      and node.student.midterm_grade > current.student.midterm_grade)):
                         node.next = current
                         if not previous:
                             self.head = node
@@ -151,7 +153,10 @@ class PriorityQueue:
                             previous.next = node
                         self.size += 1
                         return
-                     elif node.student.final_grade < current.student.final_grade:
+                     elif node.student.final_grade < current.student.final_grade or (
+                        node.student.final_grade == current.student.final_grade
+                        and node.student.midterm_grade < current.student.midterm_grade):
+
                          node.next = current.next
                          current.next = node
                          self.size += 1
@@ -208,7 +213,7 @@ class PriorityQueue:
 
         while limit < max_attempts:
             input_midterm_grade = input(f"Enter midterm grade for {input_name}: ")
-            if input_midterm_grade.isdigit() and 0 <= int(input_midterm_grade) < 100:
+            if input_midterm_grade.isdigit() and 0 <= int(input_midterm_grade) <= 100:
                 break
             print("Please enter a valid grade between 0 and 100.")
             limit += 1
@@ -217,7 +222,7 @@ class PriorityQueue:
 
         while limit < max_attempts:
             input_final_grade = input(f"Enter final grade for {input_name}: ")
-            if input_final_grade.isdigit() and 0 <= int(input_final_grade) < 100:
+            if input_final_grade.isdigit() and 0 <= int(input_final_grade) <= 100:
                 break
             print("Please enter a valid grade between 0 and 100.")
             limit += 1
@@ -236,15 +241,8 @@ class PriorityQueue:
             limit += 1
             print(f"you have {max_attempts - limit} attempts left")
 
-        new_student = Student(input_name, input_midterm_grade , input_final_grade, input_good_attitude)
+        new_student = Student(input_name, input_midterm_grade, input_final_grade, input_good_attitude)
         self.enqueue(new_student)
-
-
-
-
-
-
-
 
 
 
