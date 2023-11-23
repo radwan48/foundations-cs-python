@@ -1,0 +1,276 @@
+[33mcommit 337670f1fc0572503a71594046da70e370016a2a[m[33m ([m[1;36mHEAD -> [m[1;32mmain[m[33m, [m[1;31morigin/main[m[33m, [m[1;31morigin/HEAD[m[33m)[m
+Author: radwan48 <radwanramadan82@gmail.com>
+Date:   Sat Nov 11 20:52:28 2023 +0200
+
+    added import tabs and bug fixes
+
+[33mcommit 059c24a21d5bb5b19c667877a1248604ce6b5424[m
+Author: radwan48 <radwanramadan82@gmail.com>
+Date:   Sat Nov 11 20:24:07 2023 +0200
+
+    bug fixes
+
+[33mcommit 39e43c6c956f6115690af4593f15609f347f19f5[m
+Author: radwan48 <radwanramadan82@gmail.com>
+Date:   Sat Nov 11 20:23:07 2023 +0200
+
+    added savetab() func
+
+[33mcommit b2e94756315d8d179f28a6841f5159b754903d44[m
+Author: radwan48 <radwanramadan82@gmail.com>
+Date:   Sat Nov 11 19:11:20 2023 +0200
+
+    added display titles function
+
+[33mcommit e09df0f1a67e3ae9997ce49be3c7a94d57823126[m
+Author: radwan48 <radwanramadan82@gmail.com>
+Date:   Sat Nov 11 18:18:47 2023 +0200
+
+    added nested tab function
+
+[33mcommit 79aa57b2bf9eab80215c57d358ff9654a925c788[m
+Author: radwan48 <radwanramadan82@gmail.com>
+Date:   Sat Nov 11 12:32:19 2023 +0200
+
+    bug fixes
+
+[33mcommit d39b2fb787a00eb69a0382eaf253d96aa8db7bb4[m
+Author: radwan48 <radwanramadan82@gmail.com>
+Date:   Sat Nov 11 01:10:44 2023 +0200
+
+    bug fixes and optimization
+
+[33mcommit ffa13f39b4bff22947172f6df4dd0711c86ae7ae[m
+Author: radwan48 <radwanramadan82@gmail.com>
+Date:   Fri Nov 10 15:50:41 2023 +0200
+
+    updating switch tab ,bug fixes
+
+[33mcommit c3a78b78bb2bad479aefffe996ab8b037269fc40[m
+Author: radwan48 <radwanramadan82@gmail.com>
+Date:   Fri Nov 10 13:34:44 2023 +0200
+
+    adding switch tab
+
+[33mcommit 62443ee05f9baee08a863c2dd5bfec9758e6eaad[m
+Author: radwan48 <radwanramadan82@gmail.com>
+Date:   Fri Nov 10 12:51:00 2023 +0200
+
+    optimizing close tab and bug fixes
+
+[33mcommit edfcb000f261888c9bd088222d2f2f1b19296fc6[m
+Author: radwan48 <radwanramadan82@gmail.com>
+Date:   Fri Nov 10 03:59:48 2023 +0200
+
+    bug fixes
+
+[33mcommit 5caeb28cfef6f7cdc9c8d2bb9366363a4d23fca2[m
+Author: radwan48 <radwanramadan82@gmail.com>
+Date:   Fri Nov 10 03:24:53 2023 +0200
+
+    optimizing close tab function
+
+[33mcommit 5f114d6e6665dba7f40c5913270a5b5391bd7808[m
+Author: radwan48 <radwanramadan82@gmail.com>
+Date:   Fri Nov 10 03:18:45 2023 +0200
+
+    optimizing close tab function
+
+[33mcommit c0e6e2f6d59db8b8e4940884abb5dd237d0c78cf[m
+Author: radwan48 <radwanramadan82@gmail.com>
+Date:   Fri Nov 10 03:10:50 2023 +0200
+
+    add close tab func
+
+[33mcommit 14d01a1b273547f2b9b2afc370bfb62ce852c6d7[m
+Author: radwan48 <radwanramadan82@gmail.com>
+Date:   Fri Nov 10 03:06:48 2023 +0200
+
+    bug fixes
+
+[33mcommit 19e5d1b3bae55772dc87e812db008de3c08edbaa[m
+Author: radwan48 <radwanramadan82@gmail.com>
+Date:   Fri Nov 10 03:05:58 2023 +0200
+
+    opentab function and optimizing
+
+[33mcommit 33182792803b6723fe74145358e53074fe0269bc[m
+Author: radwan48 <radwanramadan82@gmail.com>
+Date:   Fri Nov 10 02:59:37 2023 +0200
+
+     adding function for main() for choices and displaying menu
+
+[33mcommit dafb9738344919dd2b74f2e908f007e8326e3289[m
+Author: radwan48 <radwanramadan82@gmail.com>
+Date:   Fri Nov 10 02:58:09 2023 +0200
+
+     adding function for main() for choices and displaying menu
+
+[33mcommit 286001a38c8afbe31c3038e8eb7775a34a27671d[m
+Merge: 79bae08 480aed5
+Author: radwan48 <radwanramadan82@gmail.com>
+Date:   Fri Nov 10 02:40:12 2023 +0200
+
+    Merge remote-tracking branch 'origin/main'
+
+[33mcommit 79bae08489b2508c103faf77ecff35639d4d88c7[m
+Author: radwan48 <radwanramadan82@gmail.com>
+Date:   Fri Nov 10 02:39:07 2023 +0200
+
+    adding Midterm project.py and adding function for printing display Menu
+
+[33mcommit 1ff87e9bfb969e371a4c78a85953b5ef8577bf8b[m
+Author: radwan48 <radwanramadan82@gmail.com>
+Date:   Fri Nov 10 02:38:01 2023 +0200
+
+    adding Midterm project.py and adding function for printing display Menu
+
+[33mcommit 480aed5c8d48139fd7d9b7e5f26721fd607f1696[m
+Author: Radwan Ramadan <148088810+radwan48@users.noreply.github.com>
+Date:   Sun Oct 29 14:52:42 2023 +0200
+
+    Delete .idea directory
+
+[33mcommit ac49c5336a3c116510311bbbe5aaf859e75be041[m
+Author: radwan48 <radwanramadan82@gmail.com>
+Date:   Sun Oct 29 14:45:49 2023 +0200
+
+    bug fixes
+
+[33mcommit 20ac7842297f714bd7ac38ab420605b4bd5c434c[m
+Author: radwan48 <radwanramadan82@gmail.com>
+Date:   Sun Oct 29 14:43:36 2023 +0200
+
+    checking and comment time complexity
+
+[33mcommit bbd6c53812b5039daa7cbe45fe2b1bf59db391d4[m
+Author: radwan48 <radwanramadan82@gmail.com>
+Date:   Sun Oct 29 14:27:01 2023 +0200
+
+    checking and comment time complexity
+
+[33mcommit 965f0084356ae9e20af0982fb99760397cff4221[m
+Author: radwan48 <radwanramadan82@gmail.com>
+Date:   Sun Oct 29 14:26:57 2023 +0200
+
+    checking and comment time complexity
+
+[33mcommit cec3a0acdd4f9c3528fed26c268b2aadb470b2c6[m
+Author: radwan48 <radwanramadan82@gmail.com>
+Date:   Sun Oct 29 13:32:18 2023 +0200
+
+    bug fixes in  check rotation  function
+
+[33mcommit 52bb091e25d6fb9714e2077fb8a7c6deb00ae500[m
+Author: radwan48 <radwanramadan82@gmail.com>
+Date:   Sun Oct 29 13:22:05 2023 +0200
+
+    bug fixes in  check rotation  function
+
+[33mcommit c04dd10bd0bf3d8afead92ebbf405ffe3604c425[m
+Author: radwan48 <radwanramadan82@gmail.com>
+Date:   Sun Oct 29 12:59:37 2023 +0200
+
+    adding comments
+
+[33mcommit 050634a0627a6513e7d95accbe89a4f14d243904[m
+Author: radwan48 <radwanramadan82@gmail.com>
+Date:   Sun Oct 29 12:50:10 2023 +0200
+
+    optimizing
+
+[33mcommit 4ba74e017c023c7ec3c3da73f4488608b8fdf5f3[m
+Author: radwan48 <radwanramadan82@gmail.com>
+Date:   Sun Oct 29 12:42:27 2023 +0200
+
+    bug fixes in insertion sort
+
+[33mcommit eea92e202841bc4e2d0b511401003a69c1fcec01[m
+Author: radwan48 <radwanramadan82@gmail.com>
+Date:   Sun Oct 29 12:39:57 2023 +0200
+
+    bug fixes in sequential search func
+
+[33mcommit b076700974079f7d5cf69def610c8d42f2d8343d[m
+Author: radwan48 <radwanramadan82@gmail.com>
+Date:   Sat Oct 28 13:33:00 2023 +0300
+
+    added
+
+[33mcommit bf358c75dff616afb4128ecf6b7048bb05c8d388[m
+Author: radwan48 <radwanramadan82@gmail.com>
+Date:   Sat Oct 28 13:15:39 2023 +0300
+
+    added
+
+[33mcommit ce3d4ad1a8a1222c1233e3d2ccd120883dac8fa4[m
+Author: radwan48 <radwanramadan82@gmail.com>
+Date:   Sat Oct 28 13:03:37 2023 +0300
+
+    added
+
+[33mcommit 806d46d7e3a826de5a2716d1261056bc23aff9ed[m
+Author: radwan48 <radwanramadan82@gmail.com>
+Date:   Sat Oct 28 12:29:25 2023 +0300
+
+    adding sequential search function
+
+[33mcommit e0ae7098490c5f0564cc1e79961b3a7b641e859b[m
+Author: radwan48 <radwanramadan82@gmail.com>
+Date:   Sat Oct 28 12:03:44 2023 +0300
+
+    adding is_palindrome function
+
+[33mcommit 6ce3343f867f5ae0eb43814f9d2020829aa49321[m
+Author: radwan48 <radwanramadan82@gmail.com>
+Date:   Sat Oct 28 11:55:38 2023 +0300
+
+    adding is_palindrome function
+
+[33mcommit e0a9574d1cff348d11462623b6f416f1932b433c[m
+Author: radwan48 <radwanramadan82@gmail.com>
+Date:   Sat Oct 28 00:03:59 2023 +0300
+
+    bug fixes
+
+[33mcommit 0fbbb14cbcfb982a16721f6f8043444698ca2be5[m
+Author: radwan48 <radwanramadan82@gmail.com>
+Date:   Fri Oct 27 20:46:06 2023 +0300
+
+    adding converting Matrix to dictionary function
+
+[33mcommit 5a2c13c3d8ec3fe0af5dbed838aecc80a203de48[m
+Author: radwan48 <radwanramadan82@gmail.com>
+Date:   Fri Oct 27 18:15:44 2023 +0300
+
+    bug fixes
+
+[33mcommit 1e149c73c2fbec7a33ec0e3a8c71b6173c2635b5[m
+Author: radwan48 <radwanramadan82@gmail.com>
+Date:   Fri Oct 27 18:09:06 2023 +0300
+
+    adding invert dictionary function
+
+[33mcommit 7aabc00e6d2f0b8a87c10f2e34190ac3ed967651[m
+Author: radwan48 <radwanramadan82@gmail.com>
+Date:   Fri Oct 27 15:35:04 2023 +0300
+
+    adding rotation matrices
+
+[33mcommit 9812068a63a5f55d372ceea8233bd3ab42b43a9a[m
+Author: radwan48 <radwanramadan82@gmail.com>
+Date:   Fri Oct 27 15:29:48 2023 +0300
+
+    starting with assignment3
+
+[33mcommit dee006cd7c3cbac32670a084f3e735522ce9934a[m
+Author: radwan48 <radwanramadan82@gmail.com>
+Date:   Fri Oct 27 14:37:13 2023 +0300
+
+    starting with assignment3
+
+[33mcommit f7161621da5a497b835c87d866bcd3c7ebac4453[m
+Author: Radwan Ramadan <148088810+radwan48@users.noreply.github.com>
+Date:   Fri Oct 27 14:22:00 2023 +0300
+
+    Create assi

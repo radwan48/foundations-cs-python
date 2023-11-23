@@ -1,0 +1,598 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="ec1d04e3-b1a3-415a-9a77-c8e08382cf91" name="Changes" comment="bug fixes in enqueue method" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="GitHubPullRequestSearchHistory">{
+  &quot;lastFilter&quot;: {
+  }
+}</component>
+  <component name="GithubPullRequestsUISettings">
+    <option name="selectedUrlAndAccountId">
+      <UrlAndAccount>
+        <option name="accountId" value="b1b93bdb-c0b4-4cbe-859a-d755e4d80e2d" />
+        <option name="url" value="https://github.com/radwan48/foundations-cs-python.git" />
+      </UrlAndAccount>
+    </option>
+  </component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 5
+}</component>
+  <component name="ProjectId" id="2XLRVxQ2r0pLPeBcNtydKtBJPGH" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
+    &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable&quot;
+  }
+}</component>
+  <component name="RunManager" selected="Python.Midtermproject">
+    <configuration name="Midtermproject (1)" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="foundations" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="SDK_NAME" value="Python 3.11 (pythonProject)" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/Midtermproject.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="Midtermproject" type="PythonConfigurationType" factoryName="Python" nameIsGenerated="true">
+      <module name="foundations" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/Midtermproject.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="Midtermproject1" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <module name="foundations" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/Midtermproject.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="assignment3" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="foundations" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/assignment3.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <list>
+      <item itemvalue="Python.Midtermproject" />
+      <item itemvalue="Python.Midtermproject (1)" />
+      <item itemvalue="Python.assignment3" />
+      <item itemvalue="Python.Midtermproject1" />
+    </list>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Python.Midtermproject1" />
+        <item itemvalue="Python.assignment3" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="ec1d04e3-b1a3-415a-9a77-c8e08382cf91" name="Changes" comment="" />
+      <created>1698406400723</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1698406400723</updated>
+    </task>
+    <task id="LOCAL-00065" summary="added choice menu">
+      <option name="closed" value="true" />
+      <created>1700385989695</created>
+      <option name="number" value="00065" />
+      <option name="presentableId" value="LOCAL-00065" />
+      <option name="project" value="LOCAL" />
+      <updated>1700385989695</updated>
+    </task>
+    <task id="LOCAL-00066" summary="added displayMenuLl() for displaying linkedlist menu">
+      <option name="closed" value="true" />
+      <created>1700386165553</created>
+      <option name="number" value="00066" />
+      <option name="presentableId" value="LOCAL-00066" />
+      <option name="project" value="LOCAL" />
+      <updated>1700386165553</updated>
+    </task>
+    <task id="LOCAL-00067" summary="added choices input for displayLl menu">
+      <option name="closed" value="true" />
+      <created>1700386425522</created>
+      <option name="number" value="00067" />
+      <option name="presentableId" value="LOCAL-00067" />
+      <option name="project" value="LOCAL" />
+      <updated>1700386425522</updated>
+    </task>
+    <task id="LOCAL-00068" summary="bug fixes">
+      <option name="closed" value="true" />
+      <created>1700388139503</created>
+      <option name="number" value="00068" />
+      <option name="presentableId" value="LOCAL-00068" />
+      <option name="project" value="LOCAL" />
+      <updated>1700388139503</updated>
+    </task>
+    <task id="LOCAL-00069" summary="added Node clas">
+      <option name="closed" value="true" />
+      <created>1700388275985</created>
+      <option name="number" value="00069" />
+      <option name="presentableId" value="LOCAL-00069" />
+      <option name="project" value="LOCAL" />
+      <updated>1700388275985</updated>
+    </task>
+    <task id="LOCAL-00070" summary="added Linkedlist class">
+      <option name="closed" value="true" />
+      <created>1700388487627</created>
+      <option name="number" value="00070" />
+      <option name="presentableId" value="LOCAL-00070" />
+      <option name="project" value="LOCAL" />
+      <updated>1700388487627</updated>
+    </task>
+    <task id="LOCAL-00071" summary="add Node function in class Linked list">
+      <option name="closed" value="true" />
+      <created>1700390562140</created>
+      <option name="number" value="00071" />
+      <option name="presentableId" value="LOCAL-00071" />
+      <option name="project" value="LOCAL" />
+      <updated>1700390562140</updated>
+    </task>
+    <task id="LOCAL-00072" summary="initialized  self.tail">
+      <option name="closed" value="true" />
+      <created>1700390618960</created>
+      <option name="number" value="00072" />
+      <option name="presentableId" value="LOCAL-00072" />
+      <option name="project" value="LOCAL" />
+      <updated>1700390618960</updated>
+    </task>
+    <task id="LOCAL-00073" summary="initialized  self.tail">
+      <option name="closed" value="true" />
+      <created>1700391520540</created>
+      <option name="number" value="00073" />
+      <option name="presentableId" value="LOCAL-00073" />
+      <option name="project" value="LOCAL" />
+      <updated>1700391520540</updated>
+    </task>
+    <task id="LOCAL-00074" summary="optimizing input in main() sub_choice a">
+      <option name="closed" value="true" />
+      <created>1700394618992</created>
+      <option name="number" value="00074" />
+      <option name="presentableId" value="LOCAL-00074" />
+      <option name="project" value="LOCAL" />
+      <updated>1700394618992</updated>
+    </task>
+    <task id="LOCAL-00075" summary="bug fixes in displayNodes function">
+      <option name="closed" value="true" />
+      <created>1700399649914</created>
+      <option name="number" value="00075" />
+      <option name="presentableId" value="LOCAL-00075" />
+      <option name="project" value="LOCAL" />
+      <updated>1700399649915</updated>
+    </task>
+    <task id="LOCAL-00076" summary="addding searchandremove function">
+      <option name="closed" value="true" />
+      <created>1700405397898</created>
+      <option name="number" value="00076" />
+      <option name="presentableId" value="LOCAL-00076" />
+      <option name="project" value="LOCAL" />
+      <updated>1700405397898</updated>
+    </task>
+    <task id="LOCAL-00077" summary="updating searandremove functon">
+      <option name="closed" value="true" />
+      <created>1700407543103</created>
+      <option name="number" value="00077" />
+      <option name="presentableId" value="LOCAL-00077" />
+      <option name="project" value="LOCAL" />
+      <updated>1700407543103</updated>
+    </task>
+    <task id="LOCAL-00078" summary="updating searandremove functon">
+      <option name="closed" value="true" />
+      <created>1700408125395</created>
+      <option name="number" value="00078" />
+      <option name="presentableId" value="LOCAL-00078" />
+      <option name="project" value="LOCAL" />
+      <updated>1700408125395</updated>
+    </task>
+    <task id="LOCAL-00079" summary="added inputNumeric function">
+      <option name="closed" value="true" />
+      <created>1700409077299</created>
+      <option name="number" value="00079" />
+      <option name="presentableId" value="LOCAL-00079" />
+      <option name="project" value="LOCAL" />
+      <updated>1700409077299</updated>
+    </task>
+    <task id="LOCAL-00080" summary="bugfixes">
+      <option name="closed" value="true" />
+      <created>1700409279056</created>
+      <option name="number" value="00080" />
+      <option name="presentableId" value="LOCAL-00080" />
+      <option name="project" value="LOCAL" />
+      <updated>1700409279056</updated>
+    </task>
+    <task id="LOCAL-00081" summary="bugfixes">
+      <option name="closed" value="true" />
+      <created>1700409572658</created>
+      <option name="number" value="00081" />
+      <option name="presentableId" value="LOCAL-00081" />
+      <option name="project" value="LOCAL" />
+      <updated>1700409572658</updated>
+    </task>
+    <task id="LOCAL-00082" summary="bugfixes">
+      <option name="closed" value="true" />
+      <created>1700409742753</created>
+      <option name="number" value="00082" />
+      <option name="presentableId" value="LOCAL-00082" />
+      <option name="project" value="LOCAL" />
+      <updated>1700409742753</updated>
+    </task>
+    <task id="LOCAL-00083" summary="added isPalindrome() function">
+      <option name="closed" value="true" />
+      <created>1700488367152</created>
+      <option name="number" value="00083" />
+      <option name="presentableId" value="LOCAL-00083" />
+      <option name="project" value="LOCAL" />
+      <updated>1700488367152</updated>
+    </task>
+    <task id="LOCAL-00084" summary="bug fixes in searchAndRemove()">
+      <option name="closed" value="true" />
+      <created>1700488402914</created>
+      <option name="number" value="00084" />
+      <option name="presentableId" value="LOCAL-00084" />
+      <option name="project" value="LOCAL" />
+      <updated>1700488402914</updated>
+    </task>
+    <task id="LOCAL-00085" summary="bug fixes in isPalindrome()">
+      <option name="closed" value="true" />
+      <created>1700488527879</created>
+      <option name="number" value="00085" />
+      <option name="presentableId" value="LOCAL-00085" />
+      <option name="project" value="LOCAL" />
+      <updated>1700488527879</updated>
+    </task>
+    <task id="LOCAL-00086" summary="adding student class">
+      <option name="closed" value="true" />
+      <created>1700490276492</created>
+      <option name="number" value="00086" />
+      <option name="presentableId" value="LOCAL-00086" />
+      <option name="project" value="LOCAL" />
+      <updated>1700490276492</updated>
+    </task>
+    <task id="LOCAL-00087" summary="node for student added">
+      <option name="closed" value="true" />
+      <created>1700576330968</created>
+      <option name="number" value="00087" />
+      <option name="presentableId" value="LOCAL-00087" />
+      <option name="project" value="LOCAL" />
+      <updated>1700576330968</updated>
+    </task>
+    <task id="LOCAL-00088" summary="bugfixes">
+      <option name="closed" value="true" />
+      <created>1700577970413</created>
+      <option name="number" value="00088" />
+      <option name="presentableId" value="LOCAL-00088" />
+      <option name="project" value="LOCAL" />
+      <updated>1700577970414</updated>
+    </task>
+    <task id="LOCAL-00089" summary="updating">
+      <option name="closed" value="true" />
+      <created>1700580082024</created>
+      <option name="number" value="00089" />
+      <option name="presentableId" value="LOCAL-00089" />
+      <option name="project" value="LOCAL" />
+      <updated>1700580082024</updated>
+    </task>
+    <task id="LOCAL-00090" summary="updating enqueue">
+      <option name="closed" value="true" />
+      <created>1700580441743</created>
+      <option name="number" value="00090" />
+      <option name="presentableId" value="LOCAL-00090" />
+      <option name="project" value="LOCAL" />
+      <updated>1700580441743</updated>
+    </task>
+    <task id="LOCAL-00091" summary="updating enqueue">
+      <option name="closed" value="true" />
+      <created>1700580498544</created>
+      <option name="number" value="00091" />
+      <option name="presentableId" value="LOCAL-00091" />
+      <option name="project" value="LOCAL" />
+      <updated>1700580498544</updated>
+    </task>
+    <task id="LOCAL-00092" summary="updating enqueue">
+      <option name="closed" value="true" />
+      <created>1700581950942</created>
+      <option name="number" value="00092" />
+      <option name="presentableId" value="LOCAL-00092" />
+      <option name="project" value="LOCAL" />
+      <updated>1700581950942</updated>
+    </task>
+    <task id="LOCAL-00093" summary="bug fixes">
+      <option name="closed" value="true" />
+      <created>1700582006647</created>
+      <option name="number" value="00093" />
+      <option name="presentableId" value="LOCAL-00093" />
+      <option name="project" value="LOCAL" />
+      <updated>1700582006647</updated>
+    </task>
+    <task id="LOCAL-00094" summary="update priority queue">
+      <option name="closed" value="true" />
+      <created>1700582825466</created>
+      <option name="number" value="00094" />
+      <option name="presentableId" value="LOCAL-00094" />
+      <option name="project" value="LOCAL" />
+      <updated>1700582825466</updated>
+    </task>
+    <task id="LOCAL-00095" summary="priority queue update">
+      <option name="closed" value="true" />
+      <created>1700583122939</created>
+      <option name="number" value="00095" />
+      <option name="presentableId" value="LOCAL-00095" />
+      <option name="project" value="LOCAL" />
+      <updated>1700583122939</updated>
+    </task>
+    <task id="LOCAL-00096" summary="bug fixes">
+      <option name="closed" value="true" />
+      <created>1700661674495</created>
+      <option name="number" value="00096" />
+      <option name="presentableId" value="LOCAL-00096" />
+      <option name="project" value="LOCAL" />
+      <updated>1700661674496</updated>
+    </task>
+    <task id="LOCAL-00097" summary="adding dequeue method">
+      <option name="closed" value="true" />
+      <created>1700661807294</created>
+      <option name="number" value="00097" />
+      <option name="presentableId" value="LOCAL-00097" />
+      <option name="project" value="LOCAL" />
+      <updated>1700661807294</updated>
+    </task>
+    <task id="LOCAL-00098" summary="adding dequeue method">
+      <option name="closed" value="true" />
+      <created>1700663560791</created>
+      <option name="number" value="00098" />
+      <option name="presentableId" value="LOCAL-00098" />
+      <option name="project" value="LOCAL" />
+      <updated>1700663560791</updated>
+    </task>
+    <task id="LOCAL-00099" summary="dequeue function update">
+      <option name="closed" value="true" />
+      <created>1700663686183</created>
+      <option name="number" value="00099" />
+      <option name="presentableId" value="LOCAL-00099" />
+      <option name="project" value="LOCAL" />
+      <updated>1700663686183</updated>
+    </task>
+    <task id="LOCAL-00100" summary="dequeue function update">
+      <option name="closed" value="true" />
+      <created>1700664848847</created>
+      <option name="number" value="00100" />
+      <option name="presentableId" value="LOCAL-00100" />
+      <option name="project" value="LOCAL" />
+      <updated>1700664848847</updated>
+    </task>
+    <task id="LOCAL-00101" summary=" adding add_student function">
+      <option name="closed" value="true" />
+      <created>1700667605732</created>
+      <option name="number" value="00101" />
+      <option name="presentableId" value="LOCAL-00101" />
+      <option name="project" value="LOCAL" />
+      <updated>1700667605732</updated>
+    </task>
+    <task id="LOCAL-00102" summary=" update add_student function">
+      <option name="closed" value="true" />
+      <created>1700667665890</created>
+      <option name="number" value="00102" />
+      <option name="presentableId" value="LOCAL-00102" />
+      <option name="project" value="LOCAL" />
+      <updated>1700667665890</updated>
+    </task>
+    <task id="LOCAL-00103" summary=" update add_student function v2">
+      <option name="closed" value="true" />
+      <created>1700667681283</created>
+      <option name="number" value="00103" />
+      <option name="presentableId" value="LOCAL-00103" />
+      <option name="project" value="LOCAL" />
+      <updated>1700667681283</updated>
+    </task>
+    <task id="LOCAL-00104" summary="update in add_student function">
+      <option name="closed" value="true" />
+      <created>1700668525805</created>
+      <option name="number" value="00104" />
+      <option name="presentableId" value="LOCAL-00104" />
+      <option name="project" value="LOCAL" />
+      <updated>1700668525805</updated>
+    </task>
+    <task id="LOCAL-00105" summary="update in add_student function">
+      <option name="closed" value="true" />
+      <created>1700668589109</created>
+      <option name="number" value="00105" />
+      <option name="presentableId" value="LOCAL-00105" />
+      <option name="project" value="LOCAL" />
+      <updated>1700668589110</updated>
+    </task>
+    <task id="LOCAL-00106" summary="fixes in add_student function">
+      <option name="closed" value="true" />
+      <created>1700669156282</created>
+      <option name="number" value="00106" />
+      <option name="presentableId" value="LOCAL-00106" />
+      <option name="project" value="LOCAL" />
+      <updated>1700669156282</updated>
+    </task>
+    <task id="LOCAL-00107" summary="update in add_student function">
+      <option name="closed" value="true" />
+      <created>1700669671072</created>
+      <option name="number" value="00107" />
+      <option name="presentableId" value="LOCAL-00107" />
+      <option name="project" value="LOCAL" />
+      <updated>1700669671072</updated>
+    </task>
+    <task id="LOCAL-00108" summary="added display menu func for student">
+      <option name="closed" value="true" />
+      <created>1700670139109</created>
+      <option name="number" value="00108" />
+      <option name="presentableId" value="LOCAL-00108" />
+      <option name="project" value="LOCAL" />
+      <updated>1700670139109</updated>
+    </task>
+    <task id="LOCAL-00109" summary="bugfixes in main()">
+      <option name="closed" value="true" />
+      <created>1700670170548</created>
+      <option name="number" value="00109" />
+      <option name="presentableId" value="LOCAL-00109" />
+      <option name="project" value="LOCAL" />
+      <updated>1700670170548</updated>
+    </task>
+    <task id="LOCAL-00110" summary="update in main()">
+      <option name="closed" value="true" />
+      <created>1700670480661</created>
+      <option name="number" value="00110" />
+      <option name="presentableId" value="LOCAL-00110" />
+      <option name="project" value="LOCAL" />
+      <updated>1700670480661</updated>
+    </task>
+    <task id="LOCAL-00111" summary="update in main()">
+      <option name="closed" value="true" />
+      <created>1700670536798</created>
+      <option name="number" value="00111" />
+      <option name="presentableId" value="LOCAL-00111" />
+      <option name="project" value="LOCAL" />
+      <updated>1700670536798</updated>
+    </task>
+    <task id="LOCAL-00112" summary="bug fixes in addStudent method">
+      <option name="closed" value="true" />
+      <created>1700671884071</created>
+      <option name="number" value="00112" />
+      <option name="presentableId" value="LOCAL-00112" />
+      <option name="project" value="LOCAL" />
+      <updated>1700671884071</updated>
+    </task>
+    <task id="LOCAL-00113" summary="bug fixes in enqueue method">
+      <option name="closed" value="true" />
+      <created>1700736682849</created>
+      <option name="number" value="00113" />
+      <option name="presentableId" value="LOCAL-00113" />
+      <option name="project" value="LOCAL" />
+      <updated>1700736682849</updated>
+    </task>
+    <option name="localTasksCounter" value="114" />
+    <servers />
+  </component>
+  <component name="Vcs.Log.History.Properties">
+    <option name="COLUMN_ID_ORDER">
+      <list>
+        <option value="Default.Root" />
+        <option value="Default.Author" />
+        <option value="Default.Date" />
+        <option value="Default.Subject" />
+        <option value="Space.CommitStatus" />
+      </list>
+    </option>
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="updating searandremove functon" />
+    <MESSAGE value="added inputNumeric function" />
+    <MESSAGE value="added isPalindrome() function" />
+    <MESSAGE value="bug fixes in searchAndRemove()" />
+    <MESSAGE value="bug fixes in isPalindrome()" />
+    <MESSAGE value="adding student class" />
+    <MESSAGE value="node for student added" />
+    <MESSAGE value="bugfixes" />
+    <MESSAGE value="updating" />
+    <MESSAGE value="updating enqueue" />
+    <MESSAGE value="update priority queue" />
+    <MESSAGE value="priority queue update" />
+    <MESSAGE value="bug fixes" />
+    <MESSAGE value="adding dequeue method" />
+    <MESSAGE value="dequeue function update" />
+    <MESSAGE value=" adding add_student function" />
+    <MESSAGE value=" update add_student function" />
+    <MESSAGE value=" update add_student function v2" />
+    <MESSAGE value="fixes in add_student function" />
+    <MESSAGE value="update in add_student function" />
+    <MESSAGE value="added display menu func for student" />
+    <MESSAGE value="bugfixes in main()" />
+    <MESSAGE value="update in main()" />
+    <MESSAGE value="bug fixes in addStudent method" />
+    <MESSAGE value="bug fixes in enqueue method" />
+    <option name="LAST_COMMIT_MESSAGE" value="bug fixes in enqueue method" />
+  </component>
+</project>
