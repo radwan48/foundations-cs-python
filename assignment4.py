@@ -331,6 +331,15 @@ class Graph:
         else:
             print("Please enter the number of the vertex")
 
+    def removeVertex(self):
+        vertex = input("Enter a vertex that you wish to remove :")
+        if not vertex.isdigit():
+            print("Please enter valid vertex.")
+        vertex = int(vertex)
+        del self.adj_list[vertex]
+        print(f"Vertex :{vertex} has been removed")
+
+
 
 
 
