@@ -316,7 +316,8 @@ class Graph:
             input_vertex = int(input_vertex)
             for vertex in self.adj_list:
                 if vertex >= input_vertex:
-                    print(str(vertex) + ":", end=" ")
+                    print("vertex:", str(vertex) + ",", end=" ")
+            print()
         else:
             print("Please enter the number of the vertex")
 
