@@ -291,6 +291,16 @@ class Graph:
         else:
             print("Vertex", vertex1, "does not exist to add the edge!\n")
 
+    def displayVertices(self, input_vertex):
+        if self.adj_list == 0:
+            print("Graph is empty, there is nothing to be displayed.")
+            return
+        for vertex in self.adj_list:
+            if input_vertex > vertex:
+                print(vertex + ":", end=" ")
+                self.adj_list[vertex].displayNodes()
+
+
 
 
 
