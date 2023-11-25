@@ -275,6 +275,28 @@ class LinkedList:
          self.head = node
          self.size += 1
 
+     def removeNode(self, value):
+         if self.size == 0:
+             print("No edge for this vertex to be removed")
+         elif self.size == 1:
+             self.head = None
+             self.size -= 1
+         else:
+             current = self.head
+             previous = None
+             while current and current.data != value:
+                 previous = current
+                 current = current.next
+             if current:
+                 if previous:
+                     previous.next = current.next
+                 else:
+                     self.head = current.next
+                 self.size -= 1
+
+
+
+
      def displayNodes(self):
          temp = self.head
          while temp:
@@ -347,6 +369,12 @@ class Graph:
           print(f"Vertex: {vertex} has been removed")
         else:
             print("Vertex is not found to remove.")
+
+    def removeEdge(self):
+        pass
+
+
+
 
 
 
