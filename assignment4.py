@@ -274,7 +274,11 @@ class Graph:
     def __init__(self):
         self.adj_list = {}
 
-
+    def addVertex(self,vertex):
+        if vertex not in self.adj_list:
+            self.adj_list[vertex] = LinkedList()
+            return 
+        print(f"vertex {vertex} already exists")
 
 
 
