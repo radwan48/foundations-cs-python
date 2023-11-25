@@ -336,8 +336,13 @@ class Graph:
         if not vertex.isdigit():
             print("Please enter valid vertex.")
         vertex = int(vertex)
-        del self.adj_list[vertex]
-        print(f"Vertex :{vertex} has been removed")
+        if vertex in self.adj_list:
+          del self.adj_list[vertex]
+          print(f"Vertex :{vertex} has been removed")
+        else:
+            print("Vertex is not found to remove.")
+
+
 
 
 
@@ -414,7 +419,7 @@ def main():
                 elif graph_choice == "b":
                     graph.addEdge()
                 elif graph_choice == "c":
-                    pass
+                    graph.removeVertex()
                 elif graph_choice == "d":
                     pass
                 elif graph_choice == "e":
