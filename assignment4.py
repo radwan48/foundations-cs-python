@@ -18,6 +18,18 @@ def displayMenuStudent():
           + "b. Interview a student\n"
           + "c. Return to main menu")
 
+def displayMenuGraph():
+    print("a. Add vertex\n"
+          + "b. Add edge\n"
+          + "c. Remove vertex\n"
+          + "d. Remove edge\n"
+          + "e. Display vertices with a degree of X or more.\n"
+          + "f. Return to main menu")
+
+
+
+
+
 
 class Node:
     def __init__(self, data):
