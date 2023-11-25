@@ -296,7 +296,17 @@ class Graph:
            print(f"vertex {vertex} already exists")
 
 
-    def addEdge(self, vertex1, vertex2):
+    def addEdge(self):
+        vertex1 = input("enter the edge you want to add of the first vertex")
+        if not vertex1.isdigit():
+            print("Please enter valid vertex")
+            return
+        vertex2 = input("enter the edge you want to add of the second vertex")
+        if not vertex2.isdigit():
+            print("Please enter valid vertex")
+            return
+        vertex1 = int(vertex1)
+        vertex2 = int(vertex2)
         if vertex1 in self.adj_list and vertex2 in self.adj_list:
             self.adj_list[vertex1].addNode(vertex2)
             self.adj_list[vertex2].addNode(vertex1)
@@ -393,7 +403,7 @@ def main():
                 if graph_choice == "a":
                     graph.addVertex()
                 elif graph_choice == "b":
-                    pass
+                    graph.addEdge()
                 elif graph_choice == "c":
                     pass
                 elif graph_choice == "d":
