@@ -312,6 +312,7 @@ class Graph:
 def main():
     linked_list = Linkedlist()
     priority_queue = PriorityQueue()
+    graph = Graph()
     limit = 0
     choice = ""
     while limit < 4:
@@ -361,7 +362,21 @@ def main():
         elif choice == "4":
             pass
         elif choice == "5":
-            pass
+            limit = 0
+            student_choice = ""
+            while student_choice != 'c' and limit < 4:
+                pass
+                student_choice = input("Enter your choice :").lower()
+                if student_choice == "a":
+                    pass
+                elif student_choice == "b":
+                    pass
+                elif student_choice == "c":
+                    pass
+                else:
+                    limit += 1
+                    print("Invalid choice, please enter the correct choice.")
+                    print(f"You have {4 - limit} attempts left")
         elif choice == "6":
             exit()
         else:
