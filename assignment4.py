@@ -375,16 +375,22 @@ def main():
             pass
         elif choice == "5":
             limit = 0
-            student_choice = ""
-            while student_choice != 'c' and limit < 4:
-                pass
-                student_choice = input("Enter your choice :").lower()
-                if student_choice == "a":
+            graph_choice = ""
+            while graph_choice != 'c' and limit < 4:
+                displayMenuGraph()
+                graph = input("Enter your choice :").lower()
+                if graph_choice == "a":
                     pass
-                elif student_choice == "b":
+                elif graph_choice == "b":
                     pass
-                elif student_choice == "c":
+                elif graph_choice == "c":
                     pass
+                elif graph_choice == "d":
+                    pass
+                elif graph_choice == "e":
+                    pass
+                elif graph_choice == "f":
+                    main()
                 else:
                     limit += 1
                     print("Invalid choice, please enter the correct choice.")
