@@ -324,6 +324,9 @@ class Graph:
         input_vertex = input("Enter vertex you which to display and display all vertices that are larger than vertex :")
         if input_vertex.isdigit():
             input_vertex = int(input_vertex)
+            if input_vertex not in self.adj_list:
+                print(f"Vertex: {input_vertex} is not found in graph")
+                return
             for vertex in self.adj_list:
                 if vertex >= input_vertex:
                     print("vertex:", str(vertex) + ",", end=" ")
@@ -332,13 +335,16 @@ class Graph:
             print("Please enter the number of the vertex")
 
     def removeVertex(self):
+        if not self.adj_list:
+            print("Graph is empty, there is nothing to remove.")
+            return
         vertex = input("Enter a vertex that you wish to remove :")
         if not vertex.isdigit():
             print("Please enter valid vertex.")
         vertex = int(vertex)
         if vertex in self.adj_list:
           del self.adj_list[vertex]
-          print(f"Vertex :{vertex} has been removed")
+          print(f"Vertex: {vertex} has been removed")
         else:
             print("Vertex is not found to remove.")
 
