@@ -245,6 +245,33 @@ class PriorityQueue:
         self.enqueue(new_student)
 
 
+def evaluate_expression(string):
+
+    operators = []
+    numbers = []
+    pass
+
+
+class LinkedList:
+     def __init__(self):
+         self.head = None
+         self.size = 0
+
+     def addNode(self, data):
+         node = Node(data)
+         node.next = self.head
+         self.head = next
+         self.size += 1
+
+     def displayNodes(self):
+         temp = self.head
+         while temp:
+             print(temp.data, end="-->")
+             temp = temp.next
+         print("None")
+
+
+    
 
 
 
