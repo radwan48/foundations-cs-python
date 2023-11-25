@@ -280,6 +280,17 @@ class Graph:
             return 
         print(f"vertex {vertex} already exists")
 
+    def addEedge(self, vertex1, vertex2):
+        if vertex1 in self.adj_list and vertex2 in self.adj_list:
+            self.adj_list[vertex1].addNode(vertex2)
+            self.adj_list[vertex2].addNode(vertex1)
+        elif vertex1 in self.adj_list and not vertex2 in self.adj_list:
+            print("Vertex", vertex2, "does not exist to add the edge!\n")
+        pass
+    #////////////////////////////////////////////////////////////////////////
+
+
+
 
 
     
