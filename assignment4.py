@@ -270,6 +270,13 @@ class LinkedList:
              temp = temp.next
          print("None")
 
+class Graph:
+    def __init__(self):
+        self.adj_list = {}
+
+
+
+
 
     
 
