@@ -286,8 +286,10 @@ class Graph:
             self.adj_list[vertex2].addNode(vertex1)
         elif vertex1 in self.adj_list and not vertex2 in self.adj_list:
             print("Vertex", vertex2, "does not exist to add the edge!\n")
-        pass
-    #////////////////////////////////////////////////////////////////////////
+        elif vertex1 not in self.adj_list and vertex2 not in self.adj_list:
+            print("Vertex", vertex1, "and Vertex", vertex2, " not exist to add the edge!\n")
+        else:
+            print("Vertex", vertex1, "does not exist to add the edge!\n")
 
 
 
