@@ -272,7 +272,7 @@ class LinkedList:
      def addNode(self, data):
          node = Node(data)
          node.next = self.head
-         self.head = next
+         self.head = node
          self.size += 1
 
      def displayNodes(self):
@@ -286,11 +286,15 @@ class Graph:
     def __init__(self):
         self.adj_list = {}
 
-    def addVertex(self,vertex):
-        if vertex not in self.adj_list:
+    def addVertex(self):
+        vertex = input("Enter a vertex : ")
+        if vertex.isdigit():
+          vertex = int(vertex)
+          if vertex not in self.adj_list:
             self.adj_list[vertex] = LinkedList()
-            return 
-        print(f"vertex {vertex} already exists")
+          else:
+           print(f"vertex {vertex} already exists")
+
 
     def addEdge(self, vertex1, vertex2):
         if vertex1 in self.adj_list and vertex2 in self.adj_list:
@@ -303,14 +307,20 @@ class Graph:
         else:
             print("Vertex", vertex1, "does not exist to add the edge!\n")
 
-    def displayVertices(self, input_vertex):
-        if self.adj_list == 0:
+    def displayVertices(self):
+        if not self.adj_list:
             print("Graph is empty, there is nothing to be displayed.")
             return
-        for vertex in self.adj_list:
-            if input_vertex > vertex:
-                print(vertex + ":", end=" ")
-                self.adj_list[vertex].displayNodes()
+        input_vertex = input("Enter vertex you which to display and display all vertices that are larger than vertex :")
+        if input_vertex.isdigit():
+            input_vertex = int(input_vertex)
+            for vertex in self.adj_list:
+                if vertex >= input_vertex:
+                    print(str(vertex) + ":", end=" ")
+        else:
+            print("Please enter the number of the vertex")
+
+
 
 
 
@@ -376,11 +386,11 @@ def main():
         elif choice == "5":
             limit = 0
             graph_choice = ""
-            while graph_choice != 'c' and limit < 4:
+            while graph_choice != 'f' and limit < 4:
                 displayMenuGraph()
-                graph = input("Enter your choice :").lower()
+                graph_choice = input("Enter your choice :").lower()
                 if graph_choice == "a":
-                    pass
+                    graph.addVertex()
                 elif graph_choice == "b":
                     pass
                 elif graph_choice == "c":
@@ -388,7 +398,7 @@ def main():
                 elif graph_choice == "d":
                     pass
                 elif graph_choice == "e":
-                    pass
+                    graph.displayVertices()
                 elif graph_choice == "f":
                     main()
                 else:
