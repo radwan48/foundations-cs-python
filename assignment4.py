@@ -54,25 +54,25 @@ class Linkedlist:
         self.size += 1
 
     def displayNodes(self):
-        if self.size == 0:
+        if self.size == 0:  # if linked list is empty
             print("There is no Nodes to show, please add nodes first to display .")
             return
         temp = self.head
-        while temp:
+        while temp:  # traversing into linked list
             print(temp.data, end=" --> ")
             temp = temp.next
         print("None")
 
 
     def searchAndRemove(self, value):
-        if self.size == 0:
+        if self.size == 0:  # if its empty
             print("Cant search and delete the Node since no Nodes yet .")
             return
         current = self.head
         previous = None
         while current:
-            if current.data == value:
-                if current == self.head:
+            if current.data == value:  # if  value found
+                if current == self.head:  # if the value was the first head node
                     self.head = current.next
                     if current == self.tail:
                         self.tail = None
@@ -96,7 +96,6 @@ def inputNumeric(numeric_value):
              numeric_value = int(numeric_value)
         else:
           numeric_value = int(numeric_value)
-
     except ValueError:
             print("Please enter a valid numeric value.")
 
