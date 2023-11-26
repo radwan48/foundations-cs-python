@@ -319,11 +319,14 @@ class Graph:
 
 
     def addEdge(self):
-        vertex1 = input("enter the edge you want to add of the first vertex")
+        if not self.adj_list:
+            print("Graph is empty, add vertices first")
+            return
+        vertex1 = input("enter the edge you want to add of the first vertex: ")
         if not vertex1.isdigit():
             print("Please enter valid vertex")
             return
-        vertex2 = input("enter the edge you want to add of the second vertex")
+        vertex2 = input("enter the edge you want to add of the second vertex: ")
         if not vertex2.isdigit():
             print("Please enter valid vertex")
             return
@@ -332,6 +335,7 @@ class Graph:
         if vertex1 in self.adj_list and vertex2 in self.adj_list:
             self.adj_list[vertex1].addNode(vertex2)
             self.adj_list[vertex2].addNode(vertex1)
+            print(f"Edge added between vertex: {vertex1} and vertex: {vertex2}")
         elif vertex1 in self.adj_list and vertex2 not in self.adj_list:
             print("Vertex", vertex2, "does not exist to add the edge!\n")
         elif vertex1 not in self.adj_list and vertex2 not in self.adj_list:
@@ -371,6 +375,9 @@ class Graph:
             print("Vertex is not found to remove.")
 
     def removeEdge(self):
+        if not self.adj_list:
+            print("Graph is empty, there is nothing to remove.")
+            return
         vertex1 = input("Enter the first vertex :")
         if not vertex1.isdigit():
             print("Please enter a valid vertex number")
@@ -383,6 +390,7 @@ class Graph:
         if vertex1 in self.adj_list and vertex2 in self.adj_list:
             self.adj_list[vertex1].removeNode(vertex2)
             self.adj_list[vertex2].removeNode(vertex1)
+            print(f"Edge removed between vertex: {vertex1} and vertex: {vertex2}")
         elif vertex1 in self.adj_list and vertex2 not in self.adj_list:
             print(f"Cant remove edge, since vertex {vertex2} not found")
         else:
@@ -470,7 +478,7 @@ def main():
                 elif graph_choice == "c":
                     graph.removeVertex()
                 elif graph_choice == "d":
-                    pass
+                    graph.removeEdge()
                 elif graph_choice == "e":
                     graph.displayVertices()
                 elif graph_choice == "f":
