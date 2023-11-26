@@ -277,7 +277,7 @@ class LinkedList:
 
      def removeNode(self, data):
          if self.size == 0:
-             print("No edge for this vertex to be removed")
+             return
          elif self.size == 1:
              self.head = None
              self.size -= 1
@@ -294,7 +294,13 @@ class LinkedList:
                      self.head = current.next
                  self.size -= 1
 
-
+     def getElements(self):
+         elements = []
+         current = self.head
+         while current:
+             elements.append(current.data)
+             current = current.next
+         return elements
 
 
      def displayNodes(self):
@@ -363,7 +369,6 @@ class Graph:
     def removeVertex(self):
         if not self.adj_list:
             print("Graph is empty, there is nothing to remove.")
-            return
         vertex = input("Enter a vertex that you wish to remove :")
         if not vertex.isdigit():
             print("Please enter valid vertex.")
@@ -387,14 +392,20 @@ class Graph:
         if not vertex2.isdigit():
             print("Please enter a valid vertex number")
         vertex2 = int(vertex2)
+        edge_found = False
         if vertex1 in self.adj_list and vertex2 in self.adj_list:
-            self.adj_list[vertex1].removeNode(vertex2)
-            self.adj_list[vertex2].removeNode(vertex1)
-            print(f"Edge removed between vertex: {vertex1} and vertex: {vertex2}")
+            if vertex2 in self.adj_list[vertex1].getElements() and vertex1 in self.adj_list[vertex2].getElements():
+                 self.adj_list[vertex1].removeNode(vertex2)
+                 self.adj_list[vertex2].removeNode(vertex1)
+                 print(f"Edge removed between vertex: {vertex1} and vertex: {vertex2}")
+            else:
+                print(f"There is no edge between vertex: {vertex1} and vertex: {vertex2}")
         elif vertex1 in self.adj_list and vertex2 not in self.adj_list:
             print(f"Cant remove edge, since vertex {vertex2} not found")
-        else:
+        elif vertex2 in self.adj_list and vertex1 not in self.adj_list:
             print(f"Cant remove edge, since vertex {vertex1} not found")
+        else:
+            print(f"There is no edge between vertex :{vertex1} and vertex :{vertex2}")
 
 
 
