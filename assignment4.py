@@ -89,36 +89,36 @@ class Linkedlist:
 
 def inputNumeric(numeric_value):
 
-    try:
+    try:  # we try if number contains decimal point or it is a negative number or both
         if "." in numeric_value or (numeric_value[0] == '-' and "." in numeric_value[1:]):
-             numeric_value = float(numeric_value)
+             numeric_value = float(numeric_value)  #casting it to float
         elif numeric_value[0] == '-':
-             numeric_value = int(numeric_value)
+             numeric_value = int(numeric_value)  # casting it to integer
         else:
-          numeric_value = int(numeric_value)
-    except ValueError:
+          numeric_value = int(numeric_value)    # casting it to integer
+    except ValueError:  # handle ValueError
             print("Please enter a valid numeric value.")
 
 def isPalindrome(s):
-    if len(s) == 0:
+    if len(s) == 0:  #if input was empty by user
         print("Empty string, please type a string")
         return
-    s = s.lower()
-    list1 = list(s)
+    s = s.lower()  #changing all the letter to lower case to make sure we can compare between characters
+    list1 = list(s)  #change string to a list
     list2 = []
-    original_list = list1.copy()
-    while list1:
-        list2.append(list1.pop())
-    if original_list == list2:
-        print(f"{s} is palindrome")
+    original_list = list1.copy()  # made a copy of list of the string
+    while list1:                    # while list is not empty
+        list2.append(list1.pop())   #  we append the last element
+    if original_list == list2:    # then compare it with the original list
+        print(f"{s} is palindrome")  # if list2 is the same as the input, so it is palindrome
     else:
-        print(f"{s} is not palindrome")
+        print(f"{s} is not palindrome")  # if list2 is not the same as the input, so it is palindrome
 
 
 class Student:
     def __init__(self, name, midterm_grade, final_grade, good_attitude):
         self.name = name
-        self.midterm_grade = midterm_grade
+        self.midterm_grade = midterm_grade  #cheracteristics for the student
         self.final_grade = final_grade
         self.good_attitude = good_attitude
 class Node1:
@@ -133,19 +133,19 @@ class PriorityQueue:
 
     def enqueue(self, student):
         node = Node1(student)
-        if self.size == 0:
-            self.head = node
-            self.size += 1
+        if self.size == 0:  # if the queue was empty
+            self.head = node  # new student will be at head node
+            self.size += 1   # adding size by one
         else:
-            current = self.head
-            previous = None
-            while current:
+            current = self.head  # we will use current as self.head for traversing in the queue
+            previous = None  # we will use previous as the previous node for the current
+            while current:  # while current is not None
                  if node.student.good_attitude and not current.student.good_attitude:
                      node.next = current
                      if not previous:
-                         self.head = node
+                         self.head = node  # if there is no previous
                      else:
-                         previous.next = node
+                         previous.next = node  # if there is previous
                      self.size += 1
                      return
                  elif current.student.good_attitude and not node.student.good_attitude:
@@ -270,7 +270,7 @@ def evaluateExpression(string):
         elif operator == "*":
             numbers.append(left_number * right_number)
         elif operator == "/":
-            numbers.append(left_number / right_number)
+            numbers.append(left_number // right_number)
 
     for char in string:
         if str(char).isdigit():
