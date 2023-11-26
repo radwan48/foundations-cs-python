@@ -291,9 +291,14 @@ def evaluateExpression(string):
         applyOperator()
     return numbers[0]
 
+def infixExpression():
+    try:
+      user_input = input("Enter an infix expression: ")
+      result = evaluateExpression(user_input)
+      print("Result:", result)
+    except ValueError:
+        print("Value error, please check your expression")
 
-
-    pass
 
 
 class LinkedList:
