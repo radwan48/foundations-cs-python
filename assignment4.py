@@ -298,6 +298,8 @@ def infixExpression():
       print("Result:", result)
     except ValueError:
         print("Value error, please check your expression")
+    except IndexError:
+        print("Index error, please check your expression")
 
 
 
@@ -500,7 +502,7 @@ def main():
                   print("Invalid choice, please enter the correct choice.")
                   print(f"You have {4 - limit} attempts left")
         elif choice == "4":
-            pass
+            infixExpression()
         elif choice == "5":
             limit = 0
             graph_choice = ""
