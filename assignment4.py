@@ -275,7 +275,7 @@ class LinkedList:
          self.head = node
          self.size += 1
 
-     def removeNode(self, value):
+     def removeNode(self, data):
          if self.size == 0:
              print("No edge for this vertex to be removed")
          elif self.size == 1:
@@ -284,7 +284,7 @@ class LinkedList:
          else:
              current = self.head
              previous = None
-             while current and current.data != value:
+             while current and current.data != data:
                  previous = current
                  current = current.next
              if current:
@@ -371,7 +371,22 @@ class Graph:
             print("Vertex is not found to remove.")
 
     def removeEdge(self):
-        pass
+        vertex1 = input("Enter the first vertex :")
+        if not vertex1.isdigit():
+            print("Please enter a valid vertex number")
+            return
+        vertex1 = int(vertex1)
+        vertex2 = input("Enter the second vertex :")
+        if not vertex2.isdigit():
+            print("Please enter a valid vertex number")
+        vertex2 = int(vertex2)
+        if vertex1 in self.adj_list and vertex2 in self.adj_list:
+            self.adj_list[vertex1].removeNode(vertex2)
+            self.adj_list[vertex2].removeNode(vertex1)
+        elif vertex1 in self.adj_list and vertex2 not in self.adj_list:
+            print(f"Cant remove edge, since vertex {vertex2} not found")
+        else:
+            print(f"Cant remove edge, since vertex {vertex1} not found")
 
 
 
