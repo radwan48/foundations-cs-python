@@ -280,8 +280,16 @@ def evaluateExpression(string):
             while operators and operators[-1] in "+-*/" and char in "+-*/":
                 applyOperator()
             operators.append(char)
-        elif #//:
-            pass
+        elif char == '(':
+            operators.append(char)
+        elif char == ')':
+          while operators[-1] != '(':
+             applyOperator()
+          operators.pop()
+
+    while operators:
+        applyOperator()
+    return numbers[0]
 
 
 
