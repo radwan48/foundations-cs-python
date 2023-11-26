@@ -273,6 +273,17 @@ def evaluateExpression(string):
         elif operator == "/":
             numbers.append(left_number / right_number)
 
+    for char in string:
+        if str(char).isdigit():
+            numbers.append(int(char))
+        elif char in "+-*/":
+            while operators and operators[-1] in "+-*/" and char in "+-*/":
+                applyOperator()
+            operators.append(char)
+        elif #//:
+            pass
+
+
 
     pass
 
