@@ -257,10 +257,23 @@ class PriorityQueue:
         self.enqueue(new_student)
 
 
-def evaluate_expression(string):
-
+def evaluateExpression(string):
     operators = []
     numbers = []
+    def applyOperator():
+        operator = operators.pop()
+        right_number = numbers.pop()
+        left_number = numbers.pop()
+        if operator == "+":
+            pass
+        elif operator == "-":
+            pass
+        elif operator == "*":
+            pass
+        elif operator == "/":
+            pass
+
+
     pass
 
 
@@ -409,18 +422,6 @@ class Graph:
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-    
 
 
 
