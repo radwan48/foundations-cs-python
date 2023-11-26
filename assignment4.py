@@ -265,13 +265,13 @@ def evaluateExpression(string):
         right_number = numbers.pop()
         left_number = numbers.pop()
         if operator == "+":
-            pass
+            numbers.append(left_number + right_number)
         elif operator == "-":
-            pass
+            numbers.append(left_number - right_number)
         elif operator == "*":
-            pass
+            numbers.append(left_number * right_number)
         elif operator == "/":
-            pass
+            numbers.append(left_number / right_number)
 
 
     pass
