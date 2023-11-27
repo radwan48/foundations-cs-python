@@ -351,32 +351,32 @@ class Graph:
 
 
     def addEdge(self):  # worst case is O(n)
-        if not self.adj_list:
+        if not self.adj_list:  # we check if graph is empty
             print("Graph is empty, add vertices first")
             return
         vertex1 = input("enter the edge you want to add of the first vertex: ")
-        if not vertex1.isdigit():
+        if not vertex1.isdigit():  # if the vertex was not digit number else we continue
             print("Please enter valid vertex")
             return
         vertex2 = input("enter the edge you want to add of the second vertex: ")
         if not vertex2.isdigit():
             print("Please enter valid vertex")
             return
-        vertex1 = int(vertex1)
+        vertex1 = int(vertex1)  # we change vertex to int
         vertex2 = int(vertex2)
-        if vertex1 in self.adj_list and vertex2 in self.adj_list:
-            self.adj_list[vertex1].addNode(vertex2)
-            self.adj_list[vertex2].addNode(vertex1)
+        if vertex1 in self.adj_list and vertex2 in self.adj_list:  # if these vertices in the graph
+            self.adj_list[vertex1].addNode(vertex2)  # we call addNode method to add vertex2 node to the key of vertex 1
+            self.adj_list[vertex2].addNode(vertex1)  # also  we call addNode method to add vertex1 node to the key of vertex2 since is undirected
             print(f"Edge added between vertex: {vertex1} and vertex: {vertex2}")
-        elif vertex1 in self.adj_list and vertex2 not in self.adj_list:
+        elif vertex1 in self.adj_list and vertex2 not in self.adj_list:  # if the first input vertex found in adj_list and the second was not
             print("Vertex", vertex2, "does not exist to add the edge!\n")
-        elif vertex1 not in self.adj_list and vertex2 not in self.adj_list:
+        elif vertex1 not in self.adj_list and vertex2 not in self.adj_list:  # if both was not found
             print("Vertex", vertex1, "and Vertex", vertex2, " not exist to add the edge!\n")
-        else:
+        else:  # if first vertex was not found and the second is found
             print("Vertex", vertex1, "does not exist to add the edge!\n")
 
     def displayVertices(self):  # worst case is O(v)
-        if not self.adj_list:
+        if not self.adj_list:  # checking if the adj_list is empty
             print("Graph is empty, there is nothing to be displayed.")
             return
         input_vertex = input("Enter vertex you which to display and display all vertices that are larger than vertex :")
@@ -385,7 +385,7 @@ class Graph:
             if input_vertex not in self.adj_list:
                 print(f"Vertex: {input_vertex} is not found in graph")
                 return
-            for vertex in self.adj_list:
+            for vertex in self.adj_list:  #we do for loop to print all the vertices that ar equal or greater from user input number
                 if vertex >= input_vertex:
                     print("vertex:", str(vertex) + ",", end=" ")
             print()
@@ -400,13 +400,13 @@ class Graph:
             print("Please enter valid vertex.")
         vertex = int(vertex)
         if vertex in self.adj_list:
-          del self.adj_list[vertex]
+          del self.adj_list[vertex]  # we delete the key which is the vertex
           print(f"Vertex: {vertex} has been removed")
         else:
             print("Vertex is not found to remove.")
 
     def removeEdge(self):  # worst case O(1)
-        if not self.adj_list:
+        if not self.adj_list:  # checking if adj_list is empty
             print("Graph is empty, there is nothing to remove.")
             return
         vertex1 = input("Enter the first vertex :")
@@ -418,11 +418,10 @@ class Graph:
         if not vertex2.isdigit():
             print("Please enter a valid vertex number")
         vertex2 = int(vertex2)
-        edge_found = False
         if vertex1 in self.adj_list and vertex2 in self.adj_list:
-            if vertex2 in self.adj_list[vertex1].getElements() and vertex1 in self.adj_list[vertex2].getElements():
-                 self.adj_list[vertex1].removeNode(vertex2)
-                 self.adj_list[vertex2].removeNode(vertex1)
+            if vertex2 in self.adj_list[vertex1].getElements() and vertex1 in self.adj_list[vertex2].getElements():  #we make sure if both have edges by calling the fun to get the elements in the list for vertex1 and 2
+                 self.adj_list[vertex1].removeNode(vertex2)  # we remove vertex2(edge) node from vertex1 key
+                 self.adj_list[vertex2].removeNode(vertex1)  # we remove vertex1(edge) node from vertex2 key
                  print(f"Edge removed between vertex: {vertex1} and vertex: {vertex2}")
             else:
                 print(f"There is no edge between vertex: {vertex1} and vertex: {vertex2}")
@@ -439,12 +438,12 @@ class Graph:
 
 
 def main():
-    linked_list = Linkedlist()
-    priority_queue = PriorityQueue()
-    graph = Graph()
-    limit = 0
+    linked_list = Linkedlist()  # we will use linked list in main function
+    priority_queue = PriorityQueue()  # we will use  PriorityQueue in main function
+    graph = Graph()  # we will use graph in main function
+    limit = 0  # assign limit to 0 to start the loop
     choice = ""
-    while limit < 4:
+    while limit < 4:  # max_attempts will be 4
         displayMenu()
         choice = input("Enter your choice :")
         if choice == "1":
@@ -523,10 +522,10 @@ def main():
 
 
 def name():  # worst case is O(1)
- name_input = input("Enter your name :")
- if not name_input.isalpha():
+ name_input = input("Enter your name :")  # we ask for a username
+ if not name_input.isalpha():  # if the name input was not right
      print("Please enter your real name")
-     name()
+     name() # we call the function again
  else:
      print(f"Hello {name_input}")
      main()
