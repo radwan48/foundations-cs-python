@@ -350,7 +350,7 @@ class Graph:
             print("Invalid vertex, please enter a valid vertex")
 
 
-    def addEdge(self):  # worst case is O(n)
+    def addEdge(self):  # worst case is O(e) where e is number of edges
         if not self.adj_list:  # we check if graph is empty
             print("Graph is empty, add vertices first")
             return
@@ -437,7 +437,7 @@ class Graph:
 
 
 
-def main():
+def main():  # worst case will be O(n) n where we dont know what it is , it depends on user choice
     linked_list = Linkedlist()  # we will use linked list in main function
     priority_queue = PriorityQueue()  # we will use  PriorityQueue in main function
     graph = Graph()  # we will use graph in main function
