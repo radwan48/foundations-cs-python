@@ -245,44 +245,44 @@ def evaluateExpression(string):  #O(string)
     operators = []  #list stack for operators "+-*/"
     numbers = []    # list stack for numbers "+-*/"
     def applyOperator():
-        operator = operators.pop()
-        right_number = numbers.pop()
-        left_number = numbers.pop()
+        operator = operators.pop()  # this will pop "+-*/"
+        right_number = numbers.pop()  # this will pop the last element which is the right number
+        left_number = numbers.pop()   # this will pop also the last element but second time which will be the left number
         if operator == "+":
-            numbers.append(left_number + right_number)
+            numbers.append(left_number + right_number)   # if the operator was '+' we add left to the right number
         elif operator == "-":
-            numbers.append(left_number - right_number)
+            numbers.append(left_number - right_number)  # if the operator was '-' we subtract left to the right number
         elif operator == "*":
-            numbers.append(left_number * right_number)
+            numbers.append(left_number * right_number)  # if the operator was '*' we multiply left to the right number
         elif operator == "/":
-            numbers.append(left_number // right_number)
+            numbers.append(left_number // right_number)  # if the operator was '/' we divide left to the right number
 
-    for char in string:
-        if str(char).isdigit():
+    for char in string:  # for characters in the string input
+        if str(char).isdigit():  # if the character was digit in the string we append it to the number list
             numbers.append(int(char))
-        elif char in "+-*/":
-            while operators and operators[-1] in "+-*/" and char in "+-*/":
-                applyOperator()
-            operators.append(char)
-        elif char == '(':
-            operators.append(char)
-        elif char == ')':
-          while operators[-1] != '(':
-             applyOperator()
+        elif char in "+-*/":    # if the character was one of those operators
+            while operators and operators[-1] in "+-*/" and char in "+-*/":  # we make sure if there is operators next to each other
+                applyOperator()  # we call the function again
+            operators.append(char)  # else we add the operator in the list operator
+        elif char == '(':  # if character contains  open parenthesis
+            operators.append(char)  # we add it to operators list
+        elif char == ')':  # if character contains  close parenthesis
+          while operators[-1] != '(':  # we check while the last character in operator list is not open parenthesis
+             applyOperator()  # we call function again
           operators.pop()
 
-    while operators:
-        applyOperator()
-    return numbers[0]
+    while operators:  # we make sure while operators list is not empty
+        applyOperator()  # we call again the function to check all operators
+    return numbers[0]  # we return the final result
 
 def infixExpression():  # O(s)
-    try:
+    try:  # trying user_input without any error
       user_input = input("Enter an infix expression: ")
       result = evaluateExpression(user_input)
       print("Result:", result)
-    except ValueError:
+    except ValueError:  # we handle ValueError
         print("Value error, please check your expression")
-    except IndexError:
+    except IndexError:   # we handle IndexError
         print("Index error, please check your expression")
 
 
@@ -326,7 +326,7 @@ class LinkedList:
          return elements
 
 
-     def displayNodes(self):
+     def displayNodes(self):  # this will display nodes
          temp = self.head
          while temp:
              print(temp.data, end="-->")
@@ -338,13 +338,16 @@ class Graph:
         self.adj_list = {}
 
     def addVertex(self):  # O(1)
-        vertex = input("Enter a vertex : ")
-        if vertex.isdigit():
+        vertex = input("Enter a vertex : ")  # we ask for vertex
+        if vertex.isdigit():  # we check if vertex is digit
           vertex = int(vertex)
           if vertex not in self.adj_list:
             self.adj_list[vertex] = LinkedList()
+            print(f"Vertex {str(vertex)} added ")
           else:
            print(f"vertex {vertex} already exists")
+        else:
+            print("Invalid vertex, please enter a valid vertex")
 
 
     def addEdge(self):  # worst case is O(n)
