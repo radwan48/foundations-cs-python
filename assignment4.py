@@ -171,26 +171,26 @@ class PriorityQueue:  # worst case is O(1)
                          current.next = node  #then we add new node next to current
                          self.size += 1
                          return
-                     previous = current
-                     current = current.next
-            previous.next = node
+                     previous = current  # we set previous to current
+                     current = current.next  # we set current to new current which is next to it
+            previous.next = node  # if current is none we set new node next to previous
             self.size += 1
 
     def dequeue(self):  # worst case is O(1)
-        if self.size == 0:
+        if self.size == 0:  # we check if queue is empty
             print("There are no students to interview with")
-        elif self.size == 1:
+        elif self.size == 1:  #if queue have single element(student)
             print(f"Interview will be with : {self.head.student.name}")
             self.head = None
             self.size -= 1
-        else:
+        else:  #if queue have more than single element(student)
             print(f"Interview will be with : {self.head.student.name}")
             current = self.head
             self.head = self.head.next
             current.next = None
             self.size -= 1
 
-    def addStudent(self):
+    def addStudent(self):  # not sure if worst case is O(n) or O(log n)
         limit = 0
         max_attempts = 4
         input_name = ""
@@ -241,9 +241,9 @@ class PriorityQueue:  # worst case is O(1)
         self.enqueue(new_student)
 
 
-def evaluateExpression(string):
-    operators = []
-    numbers = []
+def evaluateExpression(string):  #O(string)
+    operators = []  #list stack for operators "+-*/"
+    numbers = []    # list stack for numbers "+-*/"
     def applyOperator():
         operator = operators.pop()
         right_number = numbers.pop()
@@ -275,7 +275,7 @@ def evaluateExpression(string):
         applyOperator()
     return numbers[0]
 
-def infixExpression():
+def infixExpression():  # O(s)
     try:
       user_input = input("Enter an infix expression: ")
       result = evaluateExpression(user_input)
@@ -292,13 +292,13 @@ class LinkedList:
          self.head = None
          self.size = 0
 
-     def addNode(self, data):
+     def addNode(self, data):  #O(1) worst case
          node = Node(data)
          node.next = self.head
          self.head = node
          self.size += 1
 
-     def removeNode(self, data):
+     def removeNode(self, data):  # worst case is O(n)
          if self.size == 0:
              return
          elif self.size == 1:
@@ -318,7 +318,7 @@ class LinkedList:
                  self.size -= 1
 
      def getElements(self):
-         elements = []
+         elements = []  # we use this function to get the data form the linked list of the vertices
          current = self.head
          while current:
              elements.append(current.data)
@@ -337,7 +337,7 @@ class Graph:
     def __init__(self):
         self.adj_list = {}
 
-    def addVertex(self):
+    def addVertex(self):  # O(1)
         vertex = input("Enter a vertex : ")
         if vertex.isdigit():
           vertex = int(vertex)
@@ -347,7 +347,7 @@ class Graph:
            print(f"vertex {vertex} already exists")
 
 
-    def addEdge(self):
+    def addEdge(self):  # worst case is O(n)
         if not self.adj_list:
             print("Graph is empty, add vertices first")
             return
@@ -372,7 +372,7 @@ class Graph:
         else:
             print("Vertex", vertex1, "does not exist to add the edge!\n")
 
-    def displayVertices(self):
+    def displayVertices(self):  # worst case is O(v)
         if not self.adj_list:
             print("Graph is empty, there is nothing to be displayed.")
             return
@@ -389,7 +389,7 @@ class Graph:
         else:
             print("Please enter the number of the vertex")
 
-    def removeVertex(self):
+    def removeVertex(self):  ##worst case is O(1)
         if not self.adj_list:
             print("Graph is empty, there is nothing to remove.")
         vertex = input("Enter a vertex that you wish to remove :")
@@ -402,7 +402,7 @@ class Graph:
         else:
             print("Vertex is not found to remove.")
 
-    def removeEdge(self):
+    def removeEdge(self):  # worst case O(1)
         if not self.adj_list:
             print("Graph is empty, there is nothing to remove.")
             return
@@ -519,10 +519,16 @@ def main():
 
 
 
+def name():  # worst case is O(1)
+ name_input = input("Enter your name :")
+ if not name_input.isalpha():
+     print("Please enter your real name")
+     name()
+ else:
+     print(f"Hello {name_input}")
+     main()
 
-if __name__ == '__main__':
-    main()
-
+name()
 
 
 
