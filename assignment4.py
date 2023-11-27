@@ -41,7 +41,7 @@ class Linkedlist:
         self.tail = None
         self.size = 0
 
-    def addNode(self, data):
+    def addNode(self, data):  # worst case is O(1)
         new_node = Node(data)
         if self.size == 0:
             self.head = new_node
@@ -53,18 +53,18 @@ class Linkedlist:
             new_node.next = None
         self.size += 1
 
-    def displayNodes(self):
+    def displayNodes(self):   # Worst case O(n)
         if self.size == 0:  # if linked list is empty
-            print("There is no Nodes to show, please add nodes first to display .")
+            print("There is no Nodes to show, please add nodes first to display .")  #O(1)
             return
         temp = self.head
-        while temp:  # traversing into linked list
+        while temp:  # traversing into linked list # O(n)
             print(temp.data, end=" --> ")
             temp = temp.next
         print("None")
 
 
-    def searchAndRemove(self, value):
+    def searchAndRemove(self, value):  #Worst case is O(n)
         if self.size == 0:  # if its empty
             print("Cant search and delete the Node since no Nodes yet .")
             return
@@ -87,9 +87,9 @@ class Linkedlist:
             current = current.next
         print(f"Node with value: {value} not found.")
 
-def inputNumeric(numeric_value):
+def inputNumeric(numeric_value):  # worst case is O(1)
 
-    try:  # we try if number contains decimal point or it is a negative number or both
+    try:  # we try if number contains decimal point, or it is a negative number or both
         if "." in numeric_value or (numeric_value[0] == '-' and "." in numeric_value[1:]):
              numeric_value = float(numeric_value)  #casting it to float
         elif numeric_value[0] == '-':
@@ -99,7 +99,7 @@ def inputNumeric(numeric_value):
     except ValueError:  # handle ValueError
             print("Please enter a valid numeric value.")
 
-def isPalindrome(s):
+def isPalindrome(s):  #Worst case is O(n)
     if len(s) == 0:  #if input was empty by user
         print("Empty string, please type a string")
         return
@@ -115,23 +115,23 @@ def isPalindrome(s):
         print(f"{s} is not palindrome")  # if list2 is not the same as the input, so it is palindrome
 
 
-class Student:
+class Student:  # worst case is O(1)
     def __init__(self, name, midterm_grade, final_grade, good_attitude):
         self.name = name
         self.midterm_grade = midterm_grade  #cheracteristics for the student
         self.final_grade = final_grade
         self.good_attitude = good_attitude
-class Node1:
+class Node1:  # worst case is O(1)
     def __init__(self, student):
        self.student = student
        self.next = None
 
-class PriorityQueue:
+class PriorityQueue:  # worst case is O(1)
     def __init__(self):
       self.head = None
       self.size = 0
 
-    def enqueue(self, student):
+    def enqueue(self, student):  # worst case is O(n)
         node = Node1(student)
         if self.size == 0:  # if the queue was empty
             self.head = node  # new student will be at head node
@@ -140,58 +140,43 @@ class PriorityQueue:
             current = self.head  # we will use current as self.head for traversing in the queue
             previous = None  # we will use previous as the previous node for the current
             while current:  # while current is not None
-                 if node.student.good_attitude and not current.student.good_attitude:
+                 if node.student.good_attitude and not current.student.good_attitude:  # we need to check if new node have good attitude and the current node have bad attitude
                      node.next = current
-                     if not previous:
-                         self.head = node  # if there is no previous
-                     else:
-                         previous.next = node  # if there is previous
+                     if not previous:  # if there is no previous priority
+                         self.head = node  # we added to the head
+                     else:   # if there is previous priority
+                         previous.next = node  # we add it next to previous
                      self.size += 1
                      return
-                 elif current.student.good_attitude and not node.student.good_attitude:
-                     node.next = current.next
+                 elif current.student.good_attitude and not node.student.good_attitude:  # we need to check if new node have bad attitude and the current node have good attitude
+                     node.next = current.next  #Adding new node after current node
                      current.next = node
                      self.size += 1
                      return
                  else:
-                     if (node.student.final_grade > current.student.final_grade or
-                      (node.student.final_grade == current.student.final_grade
+                     if (node.student.final_grade > current.student.final_grade or  #we are checking if final grade of the new node is greater has priority fist and
+                      (node.student.final_grade == current.student.final_grade       # if final grade was equal we check the midterm grade of the new node and if its higher it has the priority
                       and node.student.midterm_grade > current.student.midterm_grade)):
-                        node.next = current
-                        if not previous:
-                            self.head = node
-                        else:
-                            previous.next = node
+                        node.next = current  # if the condition was true we link the new node to current
+                        if not previous:  # if there is no previous priority
+                            self.head = node  # we add it to the head
+                        else:  # if there is previous priority
+                            previous.next = node  # we add it next to previous
                         self.size += 1
                         return
-                     elif node.student.final_grade < current.student.final_grade or (
-                        node.student.final_grade == current.student.final_grade
+                     elif node.student.final_grade < current.student.final_grade or (    #we are checking if final grade of the current node is greater has priority fist and
+                        node.student.final_grade == current.student.final_grade           # if final grade was equal we check the midterm grade of the current node and if its higher it has the priority
                         and node.student.midterm_grade < current.student.midterm_grade):
-
-                         node.next = current.next
-                         current.next = node
+                         node.next = current.next  # we link the new node after current
+                         current.next = node  #then we add new node next to current
                          self.size += 1
                          return
-                     else:
-                        if node.student.midterm_grade > current.student.midterm_grade:
-                            node.next = current
-                            if not previous:
-                                self.head = node
-                            else:
-                                previous.next = node
-                                self.size += 1
-                            return
-                        elif node.student.midterm_grade < current.student.midterm_grade:
-                            node.next = current.next
-                            current.next = node
-                            self.size += 1
-                            return
                      previous = current
                      current = current.next
             previous.next = node
             self.size += 1
 
-    def dequeue(self):
+    def dequeue(self):  # worst case is O(1)
         if self.size == 0:
             print("There are no students to interview with")
         elif self.size == 1:
